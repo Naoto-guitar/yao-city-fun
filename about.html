@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>八尾市について | もっと近くて、もっと深い。八尾（やお）</title>
+    <title>八尾の深淵：玄人向け歴史探訪 | もっと近くて、もっと深い。八尾（やお）</title>
     <!-- Tailwind CSS CDNを読み込み -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
         :root {
             --yao-green: #6ba24e;
+            --yao-brown: #795548; /* 歴史の重みを出すために茶系を導入 */
         }
         body {
             font-family: 'Inter', 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', Meiryo, 'メイリオ', Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
@@ -19,7 +20,23 @@
         }
         .yao-bg-green { background-color: var(--yao-green); }
         .yao-text-green { color: var(--yao-green); }
-        .yao-border-green { border-color: var(--yao-green); }
+        .yao-border-brown { border-color: var(--yao-brown); }
+        .yao-text-brown { color: var(--yao-brown); }
+        .section-header {
+            position: relative;
+            padding-bottom: 0.75rem;
+            margin-bottom: 2rem;
+        }
+        .section-header::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 80px;
+            height: 4px;
+            background-color: var(--yao-brown);
+            border-radius: 2px;
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -40,75 +57,102 @@
     </nav>
 
     <!-- ページヘッダー -->
-    <header class="bg-gray-900 text-white py-20 mb-16 shadow-lg">
+    <header class="bg-gray-800 text-white py-20 mb-16 shadow-lg border-b-8 yao-border-brown">
         <div class="container mx-auto px-4 text-center">
-            <h1 class="text-5xl font-extrabold mb-4">八尾って、どんなまち？</h1>
-            <p class="text-xl font-light opacity-90">歴史・文化・産業から八尾の魅力を深掘り</p>
+            <h1 class="text-5xl font-extrabold mb-4 tracking-tight">八尾歴史深掘り：河内平野の深淵</h1>
+            <p class="text-xl font-light opacity-90">古代の勢力図、中世の自衛都市、そして近世の商人文化を辿る</p>
         </div>
     </header>
 
     <!-- メインコンテンツ -->
     <main class="container mx-auto px-4 max-w-5xl">
 
-        <!-- 歴史セクション -->
-        <section class="mb-16 p-8 bg-white rounded-xl shadow-xl border-l-8 border-gray-600">
-            <h2 class="text-3xl font-bold mb-6 text-gray-800 flex items-center">
-                <span class="mr-3 text-4xl">🏛️</span>
-                古代から続くロマン：河内の中心地
-            </h2>
-            <p class="text-lg mb-4 leading-relaxed text-gray-700">
-                八尾市は、大阪平野と奈良盆地を結ぶ要衝として、古代より栄えてきました。市内には**心合寺山古墳**に代表される大規模な古墳が数多く残り、これは大和朝廷（ヤマト王権）との深いつながりを示しています。
+        <!-- 導入文 -->
+        <section class="mb-16 p-8 bg-white rounded-xl shadow-xl border-l-8 yao-border-green">
+            <p class="text-lg leading-relaxed text-gray-800">
+                八尾の歴史は、ただ古いだけでなく、日本の政治・経済の中心地である**大和（奈良）**と**難波（大阪）**を結ぶ**交通の要衝**として、常に時代の表舞台にありました。ここでは、教科書には載らない、八尾の地が持つダイナミックな歴史の側面を深掘りします。
             </p>
-            <p class="text-lg leading-relaxed text-gray-700 italic border-l-4 pl-4 mt-4 border-gray-300">
-                八尾という地名は、古くから存在し、かつてこの地域が「矢作」や「矢尾」といった名前で呼ばれていたことが、時代の流れとともに「八尾」へと変化していったと言われています。
-            </p>
-            <img src="https://placehold.co/800x450/9ca3af/ffffff?text=心合寺山古墳+または+古代の出土品" alt="心合寺山古墳の航空写真" class="w-full h-auto object-cover rounded-lg my-6 shadow-md">
         </section>
 
-        <!-- 文化・町並みセクション -->
-        <section class="mb-16 p-8 bg-white rounded-xl shadow-xl border-l-8 yao-border-green">
-            <h2 class="text-3xl font-bold mb-6 text-gray-800 flex items-center">
-                <span class="mr-3 text-4xl yao-text-green">🏘️</span>
-                寺内町の町並みと商人文化
+        <!-- セクション1: 古代史とヤマト政権との関わり -->
+        <section class="mb-16">
+            <h2 class="section-header text-3xl font-extrabold yao-text-brown">
+                I. 古代：河内の勢力とヤマト王権
             </h2>
-            <p class="text-lg mb-4 leading-relaxed text-gray-700">
-                近鉄八尾駅の近くに広がる**八尾寺内町**は、戦国時代に形成された歴史的な町並みです。ここでは、防御的な堀や寺院を中心とした独特の都市構造を見ることができます。
-            </p>
-            <p class="text-lg leading-relaxed text-gray-700">
-                江戸時代には商業が発展し、八尾の商人は「河内商人」として日本各地で活躍しました。その活気と伝統は、現在も古い町家や地元の祭りに息づいています。
-            </p>
-             <img src="https://placehold.co/800x450/4b5563/ffffff?text=寺内町の古い町家" alt="八尾寺内町の伝統的な町家" class="w-full h-auto object-cover rounded-lg my-6 shadow-md">
+            <div class="p-6 bg-white rounded-lg shadow-md">
+                <h3 class="text-2xl font-bold mb-4 text-gray-800 border-b pb-2">1. 心合寺山古墳と巨大勢力</h3>
+                <p class="text-lg mb-4 leading-relaxed text-gray-700">
+                    八尾市にある**心合寺山古墳（しおんじやまこふん）**は、全長160mを超える中河内地域最大級の前方後円墳です。築造は5世紀中頃と推定され、これはヤマト王権がその勢力を全国に拡大していた時期と重なります。
+                </p>
+                <p class="text-lg leading-relaxed text-gray-700 italic border-l-4 pl-4 mt-4 border-gray-500">
+                    この古墳の巨大さは、この地域の豪族が王権の中枢と非常に密接な関係にあったことを示唆しており、当時の**河内地方が畿内の物流・政治において重要な役割**を担っていた証拠です。周辺には多くの群集墳も残され、勢力の広がりを感じさせます。
+                </p>
+                <img src="https://placehold.co/800x450/9ca3af/ffffff?text=心合寺山古墳+または+古墳の出土品" alt="心合寺山古墳の航空写真または出土品" class="w-full h-auto object-cover rounded-lg my-6 shadow-md">
+
+                <h3 class="text-2xl font-bold mb-4 mt-8 text-gray-800 border-b pb-2">2. 渋川道（竹内街道）の役割</h3>
+                <p class="text-lg leading-relaxed text-gray-700">
+                    八尾を通る**竹内街道（日本の道100選）**は、古代の官道である**「竹内道」**をルーツに持ちます。難波津と飛鳥・奈良を結ぶ重要なルートであり、八尾はまさにその中継点でした。この街道を通じて、**大陸の先進文化や物資が王権の拠点へと運ばれた**歴史的背景があります。
+                </p>
+            </div>
+        </section>
+
+        <!-- セクション2: 中世・近世：自治と経済の中心 -->
+        <section class="mb-16">
+            <h2 class="section-header text-3xl font-extrabold yao-text-brown">
+                II. 中世・近世：自衛都市と河内商人
+            </h2>
+            <div class="p-6 bg-white rounded-lg shadow-md">
+                <h3 class="text-2xl font-bold mb-4 text-gray-800 border-b pb-2">1. 織田信長も認めた八尾寺内町の成立</h3>
+                <p class="text-lg mb-4 leading-relaxed text-gray-700">
+                    八尾市街地の中心部、特に久宝寺・大信寺周辺に広がる**八尾寺内町**は、戦国時代に一向宗（浄土真宗）の勢力を基盤に築かれた**自衛のための宗教都市**です。周囲を堀や土塁で囲み、有事には町全体で防御する独自の自治機能を持っていました。
+                </p>
+                <p class="text-lg leading-relaxed text-gray-700 italic border-l-4 pl-4 mt-4 border-gray-500">
+                    興味深いのは、この町が単なる防御施設ではなく、**経済活動も活発な商工業の中心地**として機能した点です。当時の支配者、特に**織田信長**が久宝寺に陣を構えるなど、その戦略的な重要性が高く評価されていました。碁盤の目のような区画割りが現代にも残されています。
+                </p>
+                <img src="https://placehold.co/800x450/4b5563/ffffff?text=八尾寺内町の古い町家+または+地図" alt="八尾寺内町の伝統的な町家と狭い路地" class="w-full h-auto object-cover rounded-lg my-6 shadow-md">
+
+                <h3 class="text-2xl font-bold mb-4 mt-8 text-gray-800 border-b pb-2">2. 経済を支えた河内木綿と河内商人</h3>
+                <p class="text-lg leading-relaxed text-gray-700">
+                    江戸時代、八尾は綿花の栽培と加工が盛んな地域でした。特にこの地で生産された**「河内木綿」**は、その品質の高さから全国的に流通しました。
+                </p>
+                <p class="text-lg leading-relaxed text-gray-700">
+                    これを背景に、八尾の商人は**「河内商人」**として、近江商人や伊勢商人と並ぶほど商業手腕を発揮し、全国を股にかけた取引を展開しました。彼らが蓄積した富と文化が、今日の八尾の祭礼や町並みに色濃く残っています。
+                </p>
+            </div>
         </section>
         
-        <!-- 産業・現代セクション -->
-        <section class="mb-16 p-8 bg-white rounded-xl shadow-xl border-l-8 border-blue-500">
-            <h2 class="text-3xl font-bold mb-6 text-gray-800 flex items-center">
-                <span class="mr-3 text-4xl text-blue-500">✈️</span>
-                航空のまち、そしてものづくり
+        <!-- セクション3: 現代へのつながり -->
+        <section class="mb-16">
+            <h2 class="section-header text-3xl font-extrabold yao-text-brown">
+                III. 現代：ものづくりと航空のまち
             </h2>
-            <p class="text-lg mb-4 leading-relaxed text-gray-700">
-                現代の八尾を象徴するのが**八尾空港**の存在です。ここでは主に小型機の離着陸が行われ、週末には航空ファンや家族連れでにぎわいます。
-            </p>
-            <p class="text-lg leading-relaxed text-gray-700">
-                また、八尾市は古くから職人のまちとしても知られ、金属加工や歯ブラシ、そして特に**八尾えだまめ**などの農業も盛んです。「ものづくり」と「畑のつづき」が共存する、多様な産業構造を持っています。
-            </p>
-             <img src="https://placehold.co/800x450/3b82f6/ffffff?text=八尾空港+と+小型機" alt="八尾空港の滑走路と小型機の写真" class="w-full h-auto object-cover rounded-lg my-6 shadow-md">
+            <div class="p-6 bg-white rounded-lg shadow-md">
+                <h3 class="text-2xl font-bold mb-4 text-gray-800 border-b pb-2">1. 「八尾空港」の軍事・産業的変遷</h3>
+                <p class="text-lg mb-4 leading-relaxed text-gray-700">
+                    八尾空港の歴史は、太平洋戦争中の**「大正飛行場」**に遡ります。戦時中は軍事利用されましたが、戦後は民間空港として再生し、現在も自家用機や訓練機、そして災害時の物資輸送拠点として重要な役割を担っています。
+                </p>
+                
+                <h3 class="text-2xl font-bold mb-4 mt-8 text-gray-800 border-b pb-2">2. 中小企業集積地の技術力</h3>
+                <p class="text-lg leading-relaxed text-gray-700">
+                    八尾市は、東大阪と並ぶ**「ものづくりのまち」**として知られ、特に金属加工、機械部品、プラスチック成形などの分野で高い技術を持つ中小企業が密集しています。これらは河内商人の時代から続く商業・産業の土壌の上に花開いたものです。
+                </p>
+            </div>
         </section>
         
         <!-- CTA -->
         <div class="text-center my-16">
-            <h3 class="text-2xl font-bold mb-6 yao-text-green">八尾の多様な魅力を、今すぐ体験！</h3>
+            <h3 class="text-2xl font-bold mb-6 yao-text-brown">この深淵な歴史を、現地で体感しませんか？</h3>
             <a href="index.html" class="inline-flex items-center yao-bg-green text-white font-semibold py-3 px-10 rounded-full shadow-lg hover:opacity-90 transition duration-300 transform hover:scale-105">
-                トップページに戻る
+                トップページに戻り、史跡を探す
             </a>
         </div>
 
     </main>
 
     <!-- フッター -->
-    <footer class="yao-bg-green text-white p-6 text-center shadow-inner mt-16">
+    <footer class="bg-gray-800 text-white p-6 text-center shadow-inner mt-16">
         <p class="text-sm">
-            © 八尾市観光おすすめサイト「やお巡り」
+            © 八尾市観光おすすめサイト「やお巡り」 | 歴史調査協力：八尾市郷土研究会
         </p>
     </footer>
 
