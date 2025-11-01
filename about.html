@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>八尾市について | もっと近くて、もっと深い。八尾（やお）</title>
+    <!-- Tailwind CSS CDNを読み込み -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        :root {
+            --yao-green: #6ba24e;
+        }
+        body {
+            font-family: 'Inter', 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', Meiryo, 'メイリオ', Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+            color: #1f2937;
+            background-color: #f9fafb;
+            scroll-behavior: smooth;
+        }
+        .yao-bg-green { background-color: var(--yao-green); }
+        .yao-text-green { color: var(--yao-green); }
+        .yao-border-green { border-color: var(--yao-green); }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- ナビゲーション (トップページと統一) -->
+    <nav class="yao-bg-green text-white p-4 shadow-md sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-xl font-bold hover:opacity-80 transition duration-200">
+                やお巡り
+            </a>
+            <div class="space-x-4">
+                <a href="index.html#about" class="hover:underline hidden sm:inline">八尾って？</a>
+                <a href="index.html#spots" class="hover:underline hidden sm:inline">見どころ</a>
+                <a href="index.html#gourmet" class="hover:underline hidden sm:inline">グルメ</a>
+                <a href="index.html" class="bg-white text-gray-800 px-3 py-1 rounded-full text-sm font-semibold hover:bg-gray-200 transition duration-200">トップへ戻る</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ページヘッダー -->
+    <header class="bg-gray-900 text-white py-20 mb-16 shadow-lg">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-5xl font-extrabold mb-4">八尾って、どんなまち？</h1>
+            <p class="text-xl font-light opacity-90">歴史・文化・産業から八尾の魅力を深掘り</p>
+        </div>
+    </header>
+
+    <!-- メインコンテンツ -->
+    <main class="container mx-auto px-4 max-w-5xl">
+
+        <!-- 歴史セクション -->
+        <section class="mb-16 p-8 bg-white rounded-xl shadow-xl border-l-8 border-gray-600">
+            <h2 class="text-3xl font-bold mb-6 text-gray-800 flex items-center">
+                <span class="mr-3 text-4xl">🏛️</span>
+                古代から続くロマン：河内の中心地
+            </h2>
+            <p class="text-lg mb-4 leading-relaxed text-gray-700">
+                八尾市は、大阪平野と奈良盆地を結ぶ要衝として、古代より栄えてきました。市内には**心合寺山古墳**に代表される大規模な古墳が数多く残り、これは大和朝廷（ヤマト王権）との深いつながりを示しています。
+            </p>
+            <p class="text-lg leading-relaxed text-gray-700 italic border-l-4 pl-4 mt-4 border-gray-300">
+                八尾という地名は、古くから存在し、かつてこの地域が「矢作」や「矢尾」といった名前で呼ばれていたことが、時代の流れとともに「八尾」へと変化していったと言われています。
+            </p>
+            <img src="https://placehold.co/800x450/9ca3af/ffffff?text=心合寺山古墳+または+古代の出土品" alt="心合寺山古墳の航空写真" class="w-full h-auto object-cover rounded-lg my-6 shadow-md">
+        </section>
+
+        <!-- 文化・町並みセクション -->
+        <section class="mb-16 p-8 bg-white rounded-xl shadow-xl border-l-8 yao-border-green">
+            <h2 class="text-3xl font-bold mb-6 text-gray-800 flex items-center">
+                <span class="mr-3 text-4xl yao-text-green">🏘️</span>
+                寺内町の町並みと商人文化
+            </h2>
+            <p class="text-lg mb-4 leading-relaxed text-gray-700">
+                近鉄八尾駅の近くに広がる**八尾寺内町**は、戦国時代に形成された歴史的な町並みです。ここでは、防御的な堀や寺院を中心とした独特の都市構造を見ることができます。
+            </p>
+            <p class="text-lg leading-relaxed text-gray-700">
+                江戸時代には商業が発展し、八尾の商人は「河内商人」として日本各地で活躍しました。その活気と伝統は、現在も古い町家や地元の祭りに息づいています。
+            </p>
+             <img src="https://placehold.co/800x450/4b5563/ffffff?text=寺内町の古い町家" alt="八尾寺内町の伝統的な町家" class="w-full h-auto object-cover rounded-lg my-6 shadow-md">
+        </section>
+        
+        <!-- 産業・現代セクション -->
+        <section class="mb-16 p-8 bg-white rounded-xl shadow-xl border-l-8 border-blue-500">
+            <h2 class="text-3xl font-bold mb-6 text-gray-800 flex items-center">
+                <span class="mr-3 text-4xl text-blue-500">✈️</span>
+                航空のまち、そしてものづくり
+            </h2>
+            <p class="text-lg mb-4 leading-relaxed text-gray-700">
+                現代の八尾を象徴するのが**八尾空港**の存在です。ここでは主に小型機の離着陸が行われ、週末には航空ファンや家族連れでにぎわいます。
+            </p>
+            <p class="text-lg leading-relaxed text-gray-700">
+                また、八尾市は古くから職人のまちとしても知られ、金属加工や歯ブラシ、そして特に**八尾えだまめ**などの農業も盛んです。「ものづくり」と「畑のつづき」が共存する、多様な産業構造を持っています。
+            </p>
+             <img src="https://placehold.co/800x450/3b82f6/ffffff?text=八尾空港+と+小型機" alt="八尾空港の滑走路と小型機の写真" class="w-full h-auto object-cover rounded-lg my-6 shadow-md">
+        </section>
+        
+        <!-- CTA -->
+        <div class="text-center my-16">
+            <h3 class="text-2xl font-bold mb-6 yao-text-green">八尾の多様な魅力を、今すぐ体験！</h3>
+            <a href="index.html" class="inline-flex items-center yao-bg-green text-white font-semibold py-3 px-10 rounded-full shadow-lg hover:opacity-90 transition duration-300 transform hover:scale-105">
+                トップページに戻る
+            </a>
+        </div>
+
+    </main>
+
+    <!-- フッター -->
+    <footer class="yao-bg-green text-white p-6 text-center shadow-inner mt-16">
+        <p class="text-sm">
+            © 八尾市観光おすすめサイト「やお巡り」
+        </p>
+    </footer>
+
+</body>
+</html>
+
