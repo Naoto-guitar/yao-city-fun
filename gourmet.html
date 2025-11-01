@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>八尾市観光ガイド｜地元グルメ特集</title>
+    <!-- Tailwind CSS CDNを読み込み -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Interフォントを適用しつつ、日本語フォントを優先する設定 -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        :root {
+            /* キーカラーの八尾グリーン */
+            --yao-green: #6ba24e;
+            --yao-green-dark: #4b7a3a;
+        }
+        body {
+            font-family: 'Inter', 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', Meiryo, 'メイリオ', Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+            color: #1f2937; /* Dark gray for body text */
+            background-color: #f9fafb; /* Light background */
+            scroll-behavior: smooth;
+        }
+        .yao-bg-green { background-color: var(--yao-green); }
+        .yao-text-green { color: var(--yao-green); }
+        .yao-border-green { border-color: var(--yao-green); }
+
+        .hero-overlay {
+            background: linear-gradient(0deg, rgba(31, 41, 55, 0.7) 0%, rgba(31, 41, 55, 0.3) 50%, rgba(31, 41, 55, 0.7) 100%);
+        }
+        .spotlight-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .spotlight-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 25px -5px rgba(0, 0, 0, 0.1), 0 6px 10px -3px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- ナビゲーション (トップページと同じ構成) -->
+    <nav class="bg-white shadow-md p-4 sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center max-w-7xl">
+            <a href="index.html" class="text-2xl font-bold yao-text-green">やお巡り</a>
+            <div class="space-x-4">
+                <!-- トップページへのリンクは 'index.html' に修正 -->
+                <a href="index.html#about" class="hover:text-gray-900 yao-text-green">八尾って？</a>
+                <a href="index.html#spots" class="hover:text-gray-900 yao-text-green">見どころ</a>
+                <a href="course.html" class="hover:text-gray-900 yao-text-green">モデルコース</a>
+                <a href="index.html#events" class="hover:text-gray-900 yao-text-green">イベント</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ページHEROセクション -->
+    <header class="relative h-96 bg-gray-900 flex items-center justify-center overflow-hidden text-white">
+        <!-- 背景画像プレースホルダー: 若ごぼうや枝豆など地場野菜の画像を想定 -->
+        <div class="absolute inset-0 bg-cover bg-center opacity-40" 
+             style="background-image: url('images/yao_veggies.jpg');" 
+             aria-label="八尾産の新鮮な野菜">
+        </div>
+        <div class="absolute inset-0 hero-overlay opacity-60"></div>
+        
+        <div class="relative z-10 text-center p-8">
+            <p class="text-xl font-semibold mb-2 text-yellow-300">畑の恵みを味わう</p>
+            <h1 class="text-5xl md:text-6xl font-extrabold mb-4 tracking-tight drop-shadow-lg">
+                八尾の地元グルメ特集
+            </h1>
+            <p class="text-lg font-light max-w-2xl mx-auto">
+                行列のできる人気店から、八尾特産の食材まで。あなたの舌を唸らせる「やおグルメ」をご紹介します。
+            </p>
+        </div>
+    </header>
+
+    <!-- メインコンテンツ -->
+    <main class="container mx-auto px-4 py-16 md:py-24 max-w-7xl">
+        
+        <!-- SECTION 1: 地元食材の紹介 -->
+        <section id="local-ingredients" class="mb-20">
+            <h2 class="text-3xl md:text-4xl font-extrabold mb-8 text-center text-gray-800">
+                <span class="yao-text-green border-b-4 yao-border-green pb-1">八尾の"畑のつづき"</span>
+            </h2>
+            <div class="md:flex md:space-x-12 items-start">
+                <div class="md:w-1/2">
+                    <p class="text-lg mb-6 leading-relaxed text-gray-700">
+                        八尾市は大阪平野の中でも農業が盛んな地域であり、都市のすぐ隣にあることから「畑のつづき」とも呼ばれます。特に、他では手に入りにくい**伝統野菜や特産品**が有名です。
+                    </p>
+                    
+                    <h3 class="text-2xl font-bold mb-3 text-red-700 flex items-center">
+                        <span class="text-4xl mr-3">🌱</span> 八尾の特産品ピックアップ
+                    </h3>
+                    <ul class="space-y-3 bg-white p-6 rounded-xl shadow-lg border-l-4 border-red-500">
+                        <li class="font-bold text-gray-800">八尾若ごぼう</li>
+                        <p class="text-sm text-gray-600 ml-2">春の味覚。葉から茎、根まで丸ごと食べられるのが特徴で、独特の香りがあります。</p>
+                        <li class="font-bold text-gray-800">八尾えだまめ</li>
+                        <p class="text-sm text-gray-600 ml-2">秋の収穫期には、濃厚な甘みと香りで人気が高まります。</p>
+                        <li class="font-bold text-gray-800">紅たで</li>
+                        <p class="text-sm text-gray-600 ml-2">刺身のツマなどに使われる、鮮やかな赤色が特徴の薬味。</p>
+                    </ul>
+                </div>
+                <div class="md:w-1/2 mt-8 md:mt-0">
+                     <!-- 画像パス修正: images/wakagobou_field.jpg などに置き換えてください -->
+                    <img src="images/wakagobou_field.jpg" alt="八尾若ごぼうの畑" class="rounded-xl shadow-xl w-full h-auto object-cover border-t-8 yao-border-green">
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: 行列のできる名店 -->
+        <section id="restaurants" class="mb-20 bg-white p-8 md:p-12 rounded-2xl shadow-2xl">
+            <h2 class="text-3xl md:text-4xl font-extrabold mb-10 text-center text-gray-800">
+                <span class="yao-text-green border-b-4 yao-border-green pb-1">行列のできる名店スポットライト</span>
+            </h2>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                
+                <!-- 1. とんかつ マンジェ -->
+                <div class="spotlight-card border-t-8 border-red-500 rounded-xl shadow-lg p-6">
+                    <h3 class="text-2xl font-bold mb-3 text-red-700 flex items-center">
+                        <span class="text-4xl mr-2">🐷</span> とんかつ マンジェ
+                    </h3>
+                    <p class="text-gray-600 mb-4 text-sm">
+                        全国のとんかつファンが訪れる超有名店。厳選された豚肉を、独自の揚げ方でサクサクかつジューシーに仕上げます。行列は覚悟が必要ですが、並ぶ価値ありの逸品です。
+                    </p>
+                    <div class="space-y-2 text-sm text-gray-700">
+                        <p><span class="font-bold">名物:</span> TOKYO-X、シャ豚ブリアン</p>
+                        <p><span class="font-bold">アクセス:</span> JR八尾駅から徒歩約10分</p>
+                    </div>
+                </div>
+
+                <!-- 2. 讃岐屋 雅次郎 -->
+                <div class="spotlight-card border-t-8 border-blue-500 rounded-xl shadow-lg p-6">
+                    <h3 class="text-2xl font-bold mb-3 text-blue-700 flex items-center">
+                        <span class="text-4xl mr-2">🍜</span> 讃岐屋 雅次郎
+                    </h3>
+                    <p class="text-gray-600 mb-4 text-sm">
+                        関西うどん界で名を馳せる名店。打ち立て、茹でたてのコシの強いうどんは、地元八尾でも愛されています。つゆも上品で深い味わいが特徴です。
+                    </p>
+                    <div class="space-y-2 text-sm text-gray-700">
+                        <p><span class="font-bold">名物:</span> ぶっかけうどん、とり天</p>
+                        <p><span class="font-bold">アクセス:</span> 近鉄八尾駅より徒歩圏内</p>
+                    </div>
+                </div>
+                
+                <!-- 3. 麺や 一想 -->
+                <div class="spotlight-card border-t-8 border-yellow-700 rounded-xl shadow-lg p-6">
+                    <h3 class="text-2xl font-bold mb-3 text-yellow-700 flex items-center">
+                        <span class="text-4xl mr-2">🍥</span> 麺や 一想
+                    </h3>
+                    <p class="text-gray-600 mb-4 text-sm">
+                        ラーメン百名店にも選出された実力派。看板メニューの鶏白湯スープは、まろやかでクリーミーながらも飲み干せるほどあっさりとしています。
+                    </p>
+                    <div class="space-y-2 text-sm text-gray-700">
+                        <p><span class="font-bold">名物:</span> 鶏白湯ラーメン</p>
+                        <p><span class="font-bold">アクセス:</span> JR久宝寺駅より徒歩</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center text-lg text-gray-600 italic">
+                ※ 各店舗の詳細な営業時間や定休日は、事前に公式サイト等でご確認ください。
+            </div>
+        </section>
+
+        <!-- SECTION 3: グルメ写真ギャラリー -->
+        <section id="gallery" class="mb-20">
+            <h2 class="text-3xl md:text-4xl font-extrabold mb-8 text-center text-gray-800">
+                <span class="yao-text-green border-b-4 yao-border-green pb-1">食欲をそそるギャラリー</span>
+            </h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <!-- 画像パス修正: images/gourmet_1.jpg などに置き換えてください -->
+                <img src="images/gourmet_1.jpg" alt="八尾若ごぼうの天ぷら" class="w-full h-48 object-cover rounded-xl shadow-md transition duration-300 hover:scale-105">
+                <img src="images/gourmet_2.jpg" alt="マンジェのとんかつ" class="w-full h-48 object-cover rounded-xl shadow-md transition duration-300 hover:scale-105">
+                <img src="images/gourmet_3.jpg" alt="雅次郎のうどん" class="w-full h-48 object-cover rounded-xl shadow-md transition duration-300 hover:scale-105">
+                <img src="images/gourmet_4.jpg" alt="一想のラーメン" class="w-full h-48 object-cover rounded-xl shadow-md transition duration-300 hover:scale-105">
+            </div>
+        </section>
+
+        <!-- トップページへのCTA -->
+        <div class="text-center mt-20">
+            <a href="index.html" class="inline-flex items-center yao-bg-green text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:shadow-xl hover:opacity-90 transition duration-300 transform hover:scale-105">
+                トップページに戻る
+            </a>
+        </div>
+
+    </main>
+
+    <!-- フッター -->
+    <footer class="yao-bg-green text-white p-6 text-center shadow-inner mt-16">
+        <p class="text-sm">
+            © 八尾市観光おすすめサイト「やお巡り」
+        </p>
+    </footer>
+
+</body>
+</html>
+
