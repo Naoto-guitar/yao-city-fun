@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>八尾市観光ガイド｜おすすめモデルコース</title>
+    <!-- Tailwind CSS CDNを読み込み -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Interフォントを適用しつつ、日本語フォントを優先する設定 -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        :root {
+            /* キーカラーの八尾グリーン */
+            --yao-green: #6ba24e;
+            --yao-green-dark: #4b7a3a;
+        }
+        body {
+            font-family: 'Inter', 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', Meiryo, 'メイリオ', Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+            color: #1f2937; /* Dark gray for body text */
+            background-color: #f9fafb; /* Light background */
+            scroll-behavior: smooth;
+        }
+        .yao-bg-green { background-color: var(--yao-green); }
+        .yao-text-green { color: var(--yao-green); }
+        .yao-border-green { border-color: var(--yao-green); }
+        
+        .hero-overlay {
+            background: linear-gradient(0deg, rgba(31, 41, 55, 0.7) 0%, rgba(31, 41, 55, 0.3) 50%, rgba(31, 41, 55, 0.7) 100%);
+        }
+        .course-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- ナビゲーション (トップページと同じ構成) -->
+    <nav class="bg-white shadow-md p-4 sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center max-w-7xl">
+            <a href="index.html" class="text-2xl font-bold yao-text-green">やお巡り</a>
+            <div class="space-x-4">
+                <!-- トップページへのリンクは 'index.html' に修正 -->
+                <a href="index.html#about" class="hover:text-gray-900 yao-text-green">八尾って？</a>
+                <a href="index.html#spots" class="hover:text-gray-900 yao-text-green">見どころ</a>
+                <a href="gourmet.html" class="hover:text-gray-900 yao-text-green">グルメ</a>
+                <a href="index.html#events" class="hover:text-gray-900 yao-text-green">イベント</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ページHEROセクション -->
+    <header class="relative h-96 bg-gray-900 flex items-center justify-center overflow-hidden text-white">
+        <!-- 背景画像プレースホルダー: 緑地や家族連れの画像を想定 -->
+        <div class="absolute inset-0 bg-cover bg-center opacity-40" 
+             style="background-image: url('images/kyuhoji_family.jpg');" 
+             aria-label="久宝寺緑地の芝生で遊ぶ家族">
+        </div>
+        <div class="absolute inset-0 hero-overlay opacity-60"></div>
+        
+        <div class="relative z-10 text-center p-8">
+            <p class="text-xl font-semibold mb-2 text-yellow-300">週末の八尾散策に</p>
+            <h1 class="text-5xl md:text-6xl font-extrabold mb-4 tracking-tight drop-shadow-lg">
+                おすすめモデルコース
+            </h1>
+            <p class="text-lg font-light max-w-2xl mx-auto">
+                移動時間やテーマに合わせて選べる、八尾のおすすめ観光ルートをご紹介します。
+            </p>
+        </div>
+    </header>
+
+    <!-- メインコンテンツ - コース一覧 -->
+    <main class="container mx-auto px-4 py-16 md:py-24 max-w-7xl">
+        <section id="all-courses" class="space-y-16">
+
+            <!-- 1. ファミリー1日コース -->
+            <div class="course-card bg-white rounded-2xl shadow-xl overflow-hidden md:flex">
+                <div class="md:w-1/3 h-64 md:h-auto">
+                    <!-- 画像パス修正: images/family_course.jpg などに置き換えてください -->
+                    <img src="images/family_course.jpg" alt="久宝寺緑地のプール" class="w-full h-full object-cover">
+                </div>
+                <div class="md:w-2/3 p-8 md:p-12">
+                    <span class="inline-block text-sm font-semibold text-white bg-green-500 py-1 px-3 rounded-full mb-3">#自然体験</span>
+                    <h2 class="text-3xl font-extrabold mb-4 text-green-700 flex items-center">
+                        <span class="text-4xl mr-3">👨‍👩‍👧‍👦</span> ファミリー1日コース
+                    </h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        小さなお子様連れでも楽しめる、広々とした自然とダイナミックな乗り物をテーマにしたプランです。主要なスポットの移動は車またはバスを推奨。
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-4 mb-6 text-gray-700 font-medium">
+                        <p class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-green-500" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.414-1.414L11 9.586V6z" clip-rule="evenodd" /></svg>所要時間: 約6時間</p>
+                        <p class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-green-500" viewBox="0 0 20 20" fill="currentColor"><path d="M17.293 13.707a1 1 0 010 1.414l-2 2a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L14 14.586V10a1 1 0 012 0v4.586l1.293-1.293a1 1 0 011.414 0zM4 6a2 2 0 100 4h2a2 2 0 100-4H4zm1 10a2 2 0 100-4h2a2 2 0 100 4H5zM8 4a2 2 0 10-4 0v2h4V4z" /></svg>移動手段: 車/バス推奨</p>
+                    </div>
+
+                    <h3 class="text-xl font-bold mb-3 border-b pb-1 text-gray-800">コース詳細</h3>
+                    <ul class="space-y-3">
+                        <li class="p-3 bg-green-50 rounded-lg shadow-sm flex items-center">
+                            <span class="font-bold text-green-700 mr-3">1.</span> 久宝寺緑地（広場で遊び、バーベキューも可能）
+                        </li>
+                        <li class="p-3 bg-green-50 rounded-lg shadow-sm flex items-center">
+                            <span class="font-bold text-green-700 mr-3">2.</span> 八尾空港周辺（小型機の離着陸を見学）
+                        </li>
+                        <li class="p-3 bg-green-50 rounded-lg shadow-sm flex items-center">
+                            <span class="font-bold text-green-700 mr-3">3.</span> 八尾若ごぼうスイーツ店（地元食材のジェラートやケーキで休憩）
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 2. 歴史まち歩きコース -->
+            <div class="course-card bg-white rounded-2xl shadow-xl overflow-hidden md:flex flex-row-reverse">
+                <div class="md:w-1/3 h-64 md:h-auto">
+                    <!-- 画像パス修正: images/history_course.jpg などに置き換えてください -->
+                    <img src="images/history_course.jpg" alt="寺内町の古い町並み" class="w-full h-full object-cover">
+                </div>
+                <div class="md:w-2/3 p-8 md:p-12">
+                    <span class="inline-block text-sm font-semibold text-white bg-orange-500 py-1 px-3 rounded-full mb-3">#歴史散策</span>
+                    <h2 class="text-3xl font-extrabold mb-4 text-orange-700 flex items-center">
+                        <span class="text-4xl mr-3">⛩️</span> 歴史まち歩きコース
+                    </h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        八尾の古代から近世までの歴史を肌で感じるウォーキングコースです。近鉄八尾駅を中心に徒歩で巡るため、運動靴がおすすめ。
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-4 mb-6 text-gray-700 font-medium">
+                        <p class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-orange-500" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.414-1.414L11 9.586V6z" clip-rule="evenodd" /></svg>所要時間: 約4時間</p>
+                        <p class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-orange-500" viewBox="0 0 20 20" fill="currentColor"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" /></svg>移動手段: 徒歩メイン</p>
+                    </div>
+
+                    <h3 class="text-xl font-bold mb-3 border-b pb-1 text-gray-800">コース詳細</h3>
+                    <ul class="space-y-3">
+                        <li class="p-3 bg-orange-50 rounded-lg shadow-sm flex items-center">
+                            <span class="font-bold text-orange-700 mr-3">1.</span> 心合寺山古墳（中河内最大級の古墳を見学）
+                        </li>
+                        <li class="p-3 bg-orange-50 rounded-lg shadow-sm flex items-center">
+                            <span class="font-bold text-orange-700 mr-3">2.</span> 寺内町（江戸時代の面影を残す古い町並みを散策）
+                        </li>
+                        <li class="p-3 bg-orange-50 rounded-lg shadow-sm flex items-center">
+                            <span class="font-bold text-orange-700 mr-3">3.</span> 恩智神社（高台からの景色と歴史ある神社参拝）
+                        </li>
+                        <li class="p-3 bg-orange-50 rounded-lg shadow-sm flex items-center">
+                            <span class="font-bold text-orange-700 mr-3">4.</span> 八尾市立しおんじやま古墳学習館（出土品の見学）
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- 3. グルメ満喫コース -->
+            <div class="course-card bg-white rounded-2xl shadow-xl overflow-hidden md:flex">
+                <div class="md:w-1/3 h-64 md:h-auto">
+                    <!-- 画像パス修正: images/gourmet_course.jpg などに置き換えてください -->
+                    <img src="images/gourmet_course.jpg" alt="地元食材のうどん・ラーメン・とんかつ" class="w-full h-full object-cover">
+                </div>
+                <div class="md:w-2/3 p-8 md:p-12">
+                    <span class="inline-block text-sm font-semibold text-white bg-blue-500 py-1 px-3 rounded-full mb-3">#食い倒れ</span>
+                    <h2 class="text-3xl font-extrabold mb-4 text-blue-700 flex items-center">
+                        <span class="text-4xl mr-3">🍜</span> グルメ満喫コース
+                    </h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        八尾で有名な人気店を巡り、地元産の食材を味わい尽くすためのコース。移動は主に近鉄八尾駅周辺の徒歩圏内です。
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-4 mb-6 text-gray-700 font-medium">
+                        <p class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-blue-500" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.414-1.414L11 9.586V6z" clip-rule="evenodd" /></svg>所要時間: 約3〜4時間（食事時間除く）</p>
+                        <p class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-blue-500" viewBox="0 0 20 20" fill="currentColor"><path d="M17.293 13.707a1 1 0 010 1.414l-2 2a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L14 14.586V10a1 1 0 012 0v4.586l1.293-1.293a1 1 0 011.414 0zM4 6a2 2 0 100 4h2a2 2 0 100-4H4zm1 10a2 2 0 100-4h2a2 2 0 100 4H5zM8 4a2 2 0 10-4 0v2h4V4z" /></svg>移動手段: 徒歩 (近鉄八尾駅周辺)</p>
+                    </div>
+
+                    <h3 class="text-xl font-bold mb-3 border-b pb-1 text-gray-800">コース詳細</h3>
+                    <ul class="space-y-3">
+                        <li class="p-3 bg-blue-50 rounded-lg shadow-sm flex items-center">
+                            <span class="font-bold text-blue-700 mr-3">1.</span> とんかつ マンジェ（ランチに極上とんかつ）
+                        </li>
+                        <li class="p-3 bg-blue-50 rounded-lg shadow-sm flex items-center">
+                            <span class="font-bold text-blue-700 mr-3">2.</span> 讃岐屋 雅次郎（コシのある讃岐うどんを堪能）
+                        </li>
+                        <li class="p-3 bg-blue-50 rounded-lg shadow-sm flex items-center">
+                            <span class="font-bold text-blue-700 mr-3">3.</span> 麺や 一想（締めに鶏白湯ラーメン）
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+        </section>
+
+        <!-- トップページへのCTA -->
+        <div class="text-center mt-20">
+            <a href="index.html" class="inline-flex items-center yao-bg-green text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:shadow-xl hover:opacity-90 transition duration-300 transform hover:scale-105">
+                トップページに戻る
+            </a>
+        </div>
+
+    </main>
+
+    <!-- フッター -->
+    <footer class="yao-bg-green text-white p-6 text-center shadow-inner mt-16">
+        <p class="text-sm">
+            © 八尾市観光おすすめサイト「やお巡り」
+        </p>
+    </footer>
+
+</body>
+</html>
+
