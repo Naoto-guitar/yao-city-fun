@@ -41,6 +41,11 @@
             margin-left: 0.5rem;
             color: currentColor;
         }
+        /* strongタグに明示的にスタイルを適用 */
+        strong {
+            font-weight: 800; /* より強く太字にする */
+            color: #4b5563; /* 本文中の強調色として濃いグレーを設定 */
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -90,7 +95,7 @@
             <div class="md:flex md:space-x-12 items-start">
                 <div class="md:w-1/2">
                     <p class="text-lg mb-6 leading-relaxed text-gray-700">
-                        八尾市は大阪平野の中でも農業が盛んな地域であり、都市のすぐ隣にあることから「畑のつづき」とも呼ばれます。特に、他では手に入りにくい**伝統野菜や特産品**が有名です。
+                        八尾市は大阪平野の中でも農業が盛んな地域であり、都市と農地が近接していることから「畑のつづき」とも呼ばれます。特に、他では手に入りにくい<strong>伝統野菜や特産品</strong>が有名です。
                     </p>
                     
                     <h3 class="text-2xl font-bold mb-3 text-red-700 flex items-center">
@@ -229,7 +234,7 @@
         <!-- SECTION 3: グルメ写真ギャラリー -->
         <section id="gallery" class="mb-20">
             <h2 class="text-3xl md:text-4xl font-extrabold mb-8 text-center text-gray-800">
-                <span class="yao-text-green border-b-4 yao-border-green pb-1">食欲をそそるギャラリー</span>
+                <span class="yao-text-green border-b-4 yao-border-green pb-1">管理人オススメ！地元の名店グルメギャラリー</span>
             </h2>
             <!-- グリッドを6枚の画像に対応できるよう grid-cols-2 md:grid-cols-3 に変更 -->
             <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
