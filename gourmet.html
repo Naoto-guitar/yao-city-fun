@@ -34,6 +34,13 @@
             transform: translateY(-5px);
             box-shadow: 0 15px 25px -5px rgba(0, 0, 0, 0.1), 0 6px 10px -3px rgba(0, 0, 0, 0.05);
         }
+        /* 外部リンクを示すアイコンのスタイル */
+        .external-link-icon {
+            width: 1rem;
+            height: 1rem;
+            margin-left: 0.5rem;
+            color: currentColor;
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -108,16 +115,22 @@
         <!-- SECTION 2: 行列のできる名店 -->
         <section id="restaurants" class="mb-20 bg-white p-8 md:p-12 rounded-2xl shadow-2xl">
             <h2 class="text-3xl md:text-4xl font-extrabold mb-10 text-center text-gray-800">
-                <span class="yao-text-green border-b-4 yao-border-green pb-1">私の激推し名店スポットライト</span>
+                <span class="yao-text-green border-b-4 yao-border-green pb-1">行列のできる名店スポットライト</span>
             </h2>
 
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 
-                <!-- 1. とんかつ マンジェ -->
+                <!-- 1. とんかつ マンジェ (リンク付き) -->
                 <div class="spotlight-card border-t-8 border-red-500 rounded-xl shadow-lg p-6">
-                    <h3 class="text-2xl font-bold mb-3 text-red-700 flex items-center">
-                        <span class="text-4xl mr-2">🐷</span> とんかつ マンジェ
-                    </h3>
+                    <a href="#manger-link" target="_blank" rel="noopener noreferrer" class="group block mb-1">
+                        <h3 class="text-2xl font-bold text-red-700 flex items-center hover:text-red-900 transition duration-150">
+                            <span class="text-4xl mr-2 transition-transform group-hover:rotate-6">🐷</span> 
+                            とんかつ マンジェ
+                            <!-- 外部リンクアイコン (SVG) -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="external-link-icon text-red-500 group-hover:text-red-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                        </h3>
+                    </a>
+                    <p class="text-xs text-red-500 mb-4">[タイトルクリックで公式サイトへ遷移します]</p>
                     <p class="text-gray-600 mb-4 text-sm">
                         全国のとんかつファンが訪れる超有名店。厳選された豚肉を、独自の揚げ方でサクサクかつジューシーに仕上げます。行列は覚悟が必要ですが、並ぶ価値ありの逸品です。
                     </p>
@@ -127,11 +140,17 @@
                     </div>
                 </div>
 
-                <!-- 2. 讃岐屋 雅次郎 -->
+                <!-- 2. 讃岐屋 雅次郎 (リンク付き) -->
                 <div class="spotlight-card border-t-8 border-blue-500 rounded-xl shadow-lg p-6">
-                    <h3 class="text-2xl font-bold mb-3 text-blue-700 flex items-center">
-                        <span class="text-4xl mr-2">🍜</span> 讃岐屋 雅次郎
-                    </h3>
+                    <a href="#masajiro-link" target="_blank" rel="noopener noreferrer" class="group block mb-1">
+                        <h3 class="text-2xl font-bold text-blue-700 flex items-center hover:text-blue-900 transition duration-150">
+                            <span class="text-4xl mr-2 transition-transform group-hover:scale-105">🍜</span> 
+                            讃岐屋 雅次郎
+                            <!-- 外部リンクアイコン (SVG) -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="external-link-icon text-blue-500 group-hover:text-blue-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                        </h3>
+                    </a>
+                    <p class="text-xs text-blue-500 mb-4">[タイトルクリックで公式サイトへ遷移します]</p>
                     <p class="text-gray-600 mb-4 text-sm">
                         関西うどん界で名を馳せる名店。打ち立て、茹でたてのコシの強いうどんは、地元八尾でも愛されています。つゆも上品で深い味わいが特徴です。
                     </p>
@@ -141,11 +160,17 @@
                     </div>
                 </div>
                 
-                <!-- 3. 麺や 一想 -->
+                <!-- 3. 麺や 一想 (リンク付き) -->
                 <div class="spotlight-card border-t-8 border-yellow-700 rounded-xl shadow-lg p-6">
-                    <h3 class="text-2xl font-bold mb-3 text-yellow-700 flex items-center">
-                        <span class="text-4xl mr-2">🍥</span> 麺や 一想
-                    </h3>
+                    <a href="#issou-link" target="_blank" rel="noopener noreferrer" class="group block mb-1">
+                        <h3 class="text-2xl font-bold text-yellow-700 flex items-center hover:text-yellow-900 transition duration-150">
+                            <span class="text-4xl mr-2 transition-transform group-hover:scale-110">🍥</span> 
+                            麺や 一想
+                            <!-- 外部リンクアイコン (SVG) -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="external-link-icon text-yellow-500 group-hover:text-yellow-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                        </h3>
+                    </a>
+                    <p class="text-xs text-yellow-500 mb-4">[タイトルクリックで公式サイトへ遷移します]</p>
                     <p class="text-gray-600 mb-4 text-sm">
                         ラーメン百名店にも選出された実力派。看板メニューの鶏白湯スープは、まろやかでクリーミーながらも飲み干せるほどあっさりとしています。
                     </p>
@@ -155,11 +180,17 @@
                     </div>
                 </div>
 
-                <!-- 4. I AM チーズ (NEW) -->
+                <!-- 4. I AM チーズ (リンク付き) -->
                 <div class="spotlight-card border-t-8 border-pink-500 rounded-xl shadow-lg p-6">
-                    <h3 class="text-2xl font-bold mb-3 text-pink-700 flex items-center">
-                        <span class="text-4xl mr-2">🧀</span> I AM チーズ
-                    </h3>
+                    <a href="#iamcheese-link" target="_blank" rel="noopener noreferrer" class="group block mb-1">
+                        <h3 class="text-2xl font-bold text-pink-700 flex items-center hover:text-pink-900 transition duration-150">
+                            <span class="text-4xl mr-2 transition-transform group-hover:rotate-3">🧀</span> 
+                            I AM チーズ
+                            <!-- 外部リンクアイコン (SVG) -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="external-link-icon text-pink-500 group-hover:text-pink-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                        </h3>
+                    </a>
+                    <p class="text-xs text-pink-500 mb-4">[タイトルクリックで公式サイトへ遷移します]</p>
                     <p class="text-gray-600 mb-4 text-sm">
                         八尾で話題の濃厚チーズケーキ専門店 。バスクチーズケーキをはじめ、様々なタイプのチーズケーキを提供。手土産やお取り寄せにも人気です。
                     </p>
@@ -169,11 +200,17 @@
                     </div>
                 </div>
 
-                <!-- 5. くまとこむぎ (NEW) -->
+                <!-- 5. くまとこむぎ (リンク付き) -->
                 <div class="spotlight-card border-t-8 border-teal-500 rounded-xl shadow-lg p-6">
-                    <h3 class="text-2xl font-bold mb-3 text-teal-700 flex items-center">
-                        <span class="text-4xl mr-2">🥞</span> くまとこむぎ
-                    </h3>
+                    <a href="#kumakomugi-link" target="_blank" rel="noopener noreferrer" class="group block mb-1">
+                        <h3 class="text-2xl font-bold text-teal-700 flex items-center hover:text-teal-900 transition duration-150">
+                            <span class="text-4xl mr-2 transition-transform group-hover:scale-95">🥞</span> 
+                            くまとこむぎ
+                            <!-- 外部リンクアイコン (SVG) -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="external-link-icon text-teal-500 group-hover:text-teal-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                        </h3>
+                    </a>
+                    <p class="text-xs text-teal-500 mb-4">[タイトルクリックで公式サイトへ遷移します]</p>
                     <p class="text-gray-600 mb-4 text-sm">
                         近鉄八尾駅近くにある人気のクレープ・ガレット専門店 。季節のフルーツや八尾の食材を使った限定メニューも魅力です。散策途中の休憩にぴったり。
                     </p>
@@ -192,7 +229,7 @@
         <!-- SECTION 3: グルメ写真ギャラリー -->
         <section id="gallery" class="mb-20">
             <h2 class="text-3xl md:text-4xl font-extrabold mb-8 text-center text-gray-800">
-                <span class="yao-text-green border-b-4 yao-border-green pb-1">八尾名物のギャラリー</span>
+                <span class="yao-text-green border-b-4 yao-border-green pb-1">食欲をそそるギャラリー</span>
             </h2>
             <!-- グリッドを6枚の画像に対応できるよう grid-cols-2 md:grid-cols-3 に変更 -->
             <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
