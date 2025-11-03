@@ -16,17 +16,15 @@
     <meta name="keywords" content="八尾市, 観光, 大阪, グルメ, 久宝寺緑地, 八尾空港, 心合寺山古墳, モデルコース, 見どころ, マンジェ, 一想">
 
     <!-- 4. URLの正規化（重要） -->
-    <!-- TODO: このサイトの正式なURLを [ ] に入力してください (例: https://username.github.io/repository/) -->
     <link rel="canonical" href="https://nfriendship.github.io/yao-city-fun/">
 
     <!-- 5. Open Graph Protocol (Facebook, LINE, SNSシェア用) -->
     <meta property="og:title" content="八尾市観光ガイド｜大阪・久宝寺緑地・八尾空港・地元グルメをめぐる旅">
     <meta property="og:description" content="大阪・八尾市の観光ガイドへようこそ！地元在住者が、久宝寺緑地、八尾空港などの見どころや、行列グルメ、日帰りモデルコースまで、ディープな八尾の魅力を徹底紹介します。">
     <meta property="og:type" content="website">
-    <!-- TODO: サイトの正規URLを [ ] に入力してください (canonicalと同じ) -->
-     <meta property="og:url" content="https://nfriendship.github.io/yao-city-fun/">
-    <!-- TODO: images/kyuhoji1.jpg を絶対パスで指定することを推奨 (例: https://.../images/kyuhoji1.jpg) -->
-    <meta property="og:image" content="images/kyuhoji1.jpg">
+    <meta property="og:url" content="https://nfriendship.github.io/yao-city-fun/">
+    <!-- ★SNSシェアのため、画像は絶対パスで指定します★ -->
+    <meta property="og:image" content="https://nfriendship.github.io/yao-city-fun/images/kyuhoji1.jpg">
     <meta property="og:site_name" content="八尾市観光おすすめサイト「やお巡り」">
     <meta property="og:locale" content="ja_JP">
 
@@ -34,8 +32,8 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="八尾市観光ガイド｜大阪・久宝寺緑地・八尾空港・地元グルメをめぐる旅">
     <meta name="twitter:description" content="大阪・八尾市の観光ガイドへようこそ！地元在住者が、久宝寺緑地、八尾空港などの見どころや、行列グルメ、日帰りモデルコースまで、ディープな八尾の魅力を徹底紹介します。">
-    <!-- TODO: twitter:imageも絶対パスを推奨 -->
-    <meta name="twitter:image" content="images/kyuhoji1.jpg">
+    <!-- ★SNSシェアのため、画像は絶対パスで指定します★ -->
+    <meta name="twitter:image" content="https://nfriendship.github.io/yao-city-fun/images/kyuhoji1.jpg">
     <!-- <meta name="twitter:site" content="@[サイトのXアカウントID]"> -->
 
     <!-- ■ Google サイト認証 -->
@@ -78,7 +76,8 @@
     <!-- HEROセクション -->
     <header id="hero" class="min-h-screen bg-gray-900 flex items-center justify-center relative overflow-hidden text-white py-16">
         <!-- 背景画像プレースホルダー -->
-        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('images/kyuhoji1.jpg');" aria-label="久宝寺緑地の芝生"></div>
+        <!-- 元の相対パスでもブラウザ表示は問題ありませんが、OGPに合わせて絶対パスに統一することも推奨されます -->
+        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://nfriendship.github.io/yao-city-fun/images/kyuhoji1.jpg');" aria-label="久宝寺緑地の芝生"></div>
         <div class="absolute inset-0 hero-overlay"></div>
 
         <div class="text-center p-8 relative z-10 max-w-4xl">
@@ -88,13 +87,14 @@
             </h1>
             <!-- サブコピー -->
             <p class="text-xl md:text-3xl font-light mb-6 opacity-90 drop-shadow-md">
-                場所は大阪の〈庭〉。発見は無限大！
+                場所は大阪の〈庭〉。発見は無限大。
             </p>
             <!-- リード文 -->
             <p class="text-base md:text-xl mb-10 max-w-2xl mx-auto font-light leading-relaxed drop-shadow-sm">
                 こんにちは！八尾生まれ八尾育ち八尾在住という八尾三冠王がお届けするこのページへようこそ！
 ​「八尾」と聞くと、多くの人が大阪市に隣接する"ベッドタウン"というくらいのイメージかも知れませんが、その誤解、<b>もったいない</b>ですよ。
-​八尾って、巨大古墳が街中に残り、小型飛行機が頭上を飛び交い、古の情緒を残す寺内町、そして全国からファンが集まる行列グルメが共存する、大阪でも屈指の「濃い」街です。
+​八尾って、巨大古墳が街中に残り、小型飛行機が頭上を飛び交い、古の情緒を残す寺内町、そして全国からファンが集まる行列グルメが共存する、大阪でも屈し
+の「濃い」街です。
 ​このサイトでは、八尾三冠王の私だからこそ知っている、ディープな八尾の魅力をたっぷりとご紹介します。——あなたの「知らなかった大阪」を、ここで一緒に発見しましょう。日帰り・週末散策にぴったりの、奥深い八尾の旅へご案内します！
             </p>
 
@@ -204,7 +204,8 @@
             <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div class="p-6 bg-white rounded-xl shadow-lg border-t-4 border-red-500">
                     <h3 class="font-extrabold text-xl mb-2 text-gray-800">とんかつ マンジェ</h3>
-                    <p class="text-gray-600 text-sm">全国のファンが訪れる行列店。サクサク衣と肉汁が絶品。</p>
+                    <p class="text-gray-600 text-sm">全国のファンが訪れる行列店。サク
+衣と肉汁が絶品。</p>
                 </div>
                 <div class="p-6 bg-white rounded-xl shadow-lg border-t-4 border-yellow-500">
                     <h3 class="font-extrabold text-xl mb-2 text-gray-800">麺や 一想</h3>
@@ -287,4 +288,5 @@
 
 </body>
 </html>
+
 
