@@ -65,8 +65,7 @@
 
     <!-- ページHEROセクション -->
     <header class="relative h-96 bg-gray-900 flex items-center justify-center overflow-hidden text-white">
-        <!-- 背景画像プレースホルダー: 若ごぼうや枝豆など地場野菜の画像を想定 -->
-        <!-- 若ごぼうの画像表示削除のため、一般的な野菜画像に言及する説明に変更 -->
+        <!-- 背景画像プレースホルダー -->
         <div class="absolute inset-0 bg-cover bg-center opacity-40" 
              style="background-image: url('images/yao_veggies.jpg');" 
              aria-label="八尾産の新鮮な野菜">
@@ -87,7 +86,7 @@
     <!-- メインコンテンツ -->
     <main class="container mx-auto px-4 py-16 md:py-24 max-w-7xl">
         
-        <!-- SECTION 1: 行列のできる名店 (最優先表示) -->
+        <!-- SECTION 1: 行列のできる名店 (順序維持) -->
         <section id="restaurants" class="mb-20 bg-white p-8 md:p-12 rounded-2xl shadow-2xl">
             <h2 class="text-3xl md:text-4xl font-extrabold mb-10 text-center text-gray-800">
                 <span class="yao-text-green border-b-4 yao-border-green pb-1">行列のできる名店スポットライト</span>
@@ -201,39 +200,12 @@
             </div>
         </section>
 
-
-        <!-- SECTION 2: 地元食材の紹介（特産品） -->
-        <section id="local-ingredients" class="mb-20">
-            <h2 class="text-3xl md:text-4xl font-extrabold mb-8 text-center text-gray-800">
-                <span class="yao-text-green border-b-4 yao-border-green pb-1">八尾の"畑のつづき"（特産品）</span>
-            </h2>
-            <div class="flex flex-col items-start">
-                <div class="w-full">
-                    <p class="text-lg mb-6 leading-relaxed text-gray-700">
-                        八尾市は大阪平野の中でも農業が盛んな地域であり、都市と農地が近接していることから「畑のつづき」とも呼ばれます。特に、他では手に入りにくい<strong>伝統野菜や特産品</strong>が有名です。
-                    </p>
-                    
-                    <h3 class="text-2xl font-bold mb-3 text-red-700 flex items-center">
-                        <span class="text-4xl mr-3">🌱</span> 八尾の特産品ピックアップ
-                    </h3>
-                    <!-- ul/li要素は、テキスト量に応じて自動的に高さを調整します -->
-                    <ul class="space-y-3 bg-white p-6 rounded-xl shadow-lg border-l-4 border-red-500">
-                        <li class="font-bold text-gray-800">八尾若ごぼう</li>
-                        <p class="text-sm text-gray-600 ml-2">春の味覚。葉から茎、根まで丸ごと食べられるのが特徴で、独特の香りがあります。</p>
-                        <li class="font-bold text-gray-800">八尾えだまめ</li>
-                        <p class="text-sm text-gray-600 ml-2">秋の収穫期には、濃厚な甘みと香りで人気が高まります。</p>
-                        <li class="font-bold text-gray-800">紅たで</li>
-                        <p class="text-sm text-gray-600 ml-2">刺身のツマなどに使われる、鮮やかな赤色が特徴の薬味。</p>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECTION 3: グルメ写真ギャラリー -->
+        <!-- SECTION 2: グルメ写真ギャラリー (順序変更) -->
         <section id="gallery" class="mb-20">
             <h2 class="text-3xl md:text-4xl font-extrabold mb-8 text-center text-gray-800">
                 <span class="yao-text-green border-b-4 yao-border-green pb-1">管理人オススメ！地元の名店グルメギャラリー</span>
             </h2>
+            <!-- 若ごぼうの画像（gourmet_1.jpg）は前回の指示で削除済みのため、5枚の画像をそのまま表示 -->
             <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
                 
                 <!-- 1. マンジェ -->
@@ -264,6 +236,37 @@
                 <div class="space-y-2 transition duration-300 hover:scale-[1.02] cursor-pointer">
                     <img src="images/gourmet_6.jpg" alt="くまとこむぎのクレープ" class="w-full h-48 object-cover rounded-xl shadow-md">
                     <p class="text-center text-sm font-semibold text-gray-700">くまとこむぎ（クレープ）</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- SECTION 3: 地元食材の紹介（特産品） (順序変更 & 画像復活) -->
+        <section id="local-ingredients" class="mb-20">
+            <h2 class="text-3xl md:text-4xl font-extrabold mb-8 text-center text-gray-800">
+                <span class="yao-text-green border-b-4 yao-border-green pb-1">八尾の"畑のつづき"（特産品）</span>
+            </h2>
+            <div class="md:flex md:space-x-12 items-start">
+                <div class="md:w-1/2">
+                    <p class="text-lg mb-6 leading-relaxed text-gray-700">
+                        八尾市は大阪平野の中でも農業が盛んな地域であり、都市と農地が近接していることから「畑のつづき」とも呼ばれます。特に、他では手に入りにくい<strong>伝統野菜や特産品</strong>が有名です。
+                    </p>
+                    
+                    <h3 class="text-2xl font-bold mb-3 text-red-700 flex items-center">
+                        <span class="text-4xl mr-3">🌱</span> 八尾の特産品ピックアップ
+                    </h3>
+                    <ul class="space-y-3 bg-white p-6 rounded-xl shadow-lg border-l-4 border-red-500">
+                        <li class="font-bold text-gray-800">八尾若ごぼう</li>
+                        <p class="text-sm text-gray-600 ml-2">春の味覚。葉から茎、根まで丸ごと食べられるのが特徴で、独特の香りがあります。</p>
+                        <li class="font-bold text-gray-800">八尾えだまめ</li>
+                        <p class="text-sm text-gray-600 ml-2">秋の収穫期には、濃厚な甘みと香りで人気が高まります。</p>
+                        <li class="font-bold text-gray-800">紅たで</li>
+                        <p class="text-sm text-gray-600 ml-2">刺身のツマなどに使われる、鮮やかな赤色が特徴の薬味。</p>
+                    </ul>
+                </div>
+                <!-- 若ごぼうの畑の画像を復活させました -->
+                <div class="md:w-1/2 mt-8 md:mt-0">
+                    <img src="images/wakagobou_field.jpg" alt="八尾若ごぼうの畑" class="rounded-xl shadow-xl w-full h-auto object-cover border-t-8 yao-border-green">
                 </div>
             </div>
         </section>
