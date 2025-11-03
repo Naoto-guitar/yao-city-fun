@@ -34,6 +34,57 @@
             transform: translateY(-5px);
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
         }
+        /* Googleマップの埋め込みをレスポンシブにするためのコンテナ */
+        .map-container {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 75%; /* 4:3のアスペクト比 */
+            border-radius: 0.75rem; /* rounded-xl */
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+        }
+        .map-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        /* スポットごとの詳細マップ用コンテナのスタイル */
+        .detail-map-container {
+            width: 100%;
+            height: 300px; /* 固定高さを設定 */
+            margin-top: 1rem;
+            border-radius: 0.5rem;
+            overflow: hidden;
+        }
+        .detail-map-container iframe {
+            width: 100%;
+            height: 100%;
+        }
+        /* details/summaryのスタイル調整 */
+        details {
+            border-bottom: 1px solid #e5e7eb; /* light-gray border */
+        }
+        summary {
+            cursor: pointer;
+            padding: 0.75rem 0;
+            outline: none;
+            display: flex;
+            align-items: center;
+            font-weight: 600;
+        }
+        summary::-webkit-details-marker {
+            display: none;
+        }
+        summary .arrow {
+            transition: transform 0.2s;
+            margin-right: 0.75rem;
+        }
+        details[open] summary .arrow {
+            transform: rotate(90deg);
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -43,7 +94,7 @@
         <div class="container mx-auto flex justify-between items-center max-w-7xl">
             <a href="index.html" class="text-2xl font-bold yao-text-green">やお巡り</a>
             <div class="space-x-4">
-                <!-- トップページへのリンクは 'index.html' に修正 -->
+                <!-- リンクは仮のファイル名を使用 -->
                 <a href="index.html#about" class="hover:text-gray-900 yao-text-green">八尾って？</a>
                 <a href="index.html#spots" class="hover:text-gray-900 yao-text-green">見どころ</a>
                 <a href="gourmet.html" class="hover:text-gray-900 yao-text-green">グルメ</a>
@@ -56,7 +107,7 @@
     <header class="relative h-96 bg-gray-900 flex items-center justify-center overflow-hidden text-white">
         <!-- 背景画像プレースホルダー: 緑地や家族連れの画像を想定 -->
         <div class="absolute inset-0 bg-cover bg-center opacity-40" 
-             style="background-image: url('images/kyuhoji_family.jpg');" 
+             style="background-image: url('https://placehold.co/1200x600/6ba24e/ffffff?text=Yao+Model+Courses');" 
              aria-label="久宝寺緑地の芝生で遊ぶ家族">
         </div>
         <div class="absolute inset-0 hero-overlay opacity-60"></div>
@@ -76,111 +127,406 @@
     <main class="container mx-auto px-4 py-16 md:py-24 max-w-7xl">
         <section id="all-courses" class="space-y-16">
 
-            <!-- 1. ファミリー1日コース -->
-            <div class="course-card bg-white rounded-2xl shadow-xl overflow-hidden md:flex">
-                <div class="md:w-1/3 h-64 md:h-auto">
-                    <!-- 画像パス修正: images/family_course.jpg などに置き換えてください -->
-                    <img src="images/family_pool.jpg" alt="久宝寺緑地のプール" class="w-full h-full object-cover">
+            <!-- 1. ファミリー1日コース (個別マップ展開機能を導入) -->
+            <div class="course-card bg-white rounded-2xl shadow-xl overflow-hidden">
+                <div class="md:flex">
+                    <div class="md:w-1/3 h-64 md:h-auto">
+                        <!-- 画像プレースホルダー -->
+                        <img src="https://placehold.co/600x400/8dcb6d/000000?text=Kyuhoji+Park+Family" alt="久宝寺緑地のプール" class="w-full h-full object-cover">
+                    </div>
+                    <div class="md:w-2/3 p-8 md:p-12">
+                        <span class="inline-block text-sm font-semibold text-white bg-green-500 py-1 px-3 rounded-full mb-3">#自然体験</span>
+                        <h2 class="text-3xl font-extrabold mb-4 text-green-700 flex items-center">
+                            <span class="text-4xl mr-3">👨‍👩‍👧‍👦</span> ファミリー1日コース
+                        </h2>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            小さなお子様連れでも楽しめる、広々とした自然と飛行機のダイナミックな迫力をテーマにしたプランです。主要なスポットの移動は車またはバスを推奨。
+                        </p>
+                        
+                        <div class="grid grid-cols-2 gap-4 mb-6 text-gray-700 font-medium">
+                            <p class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-green-500" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.414-1.414L11 9.586V6z" clip-rule="evenodd" /></svg>所要時間: 約6時間</p>
+                            <p class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-green-500" viewBox="0 0 20 20" fill="currentColor"><path d="M17.293 13.707a1 1 0 010 1.414l-2 2a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L14 14.586V10a1 1 0 012 0v4.586l1.293-1.293a1 1 0 011.414 0zM4 6a2 2 0 100 4h2a2 2 0 100-4H4zm1 10a2 2 0 100-4h2a2 2 0 100 4H5zM8 4a2 2 0 10-4 0v2h4V4z" /></svg>移動手段: 車/バス推奨</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="md:w-2/3 p-8 md:p-12">
-                    <span class="inline-block text-sm font-semibold text-white bg-green-500 py-1 px-3 rounded-full mb-3">#自然体験</span>
-                    <h2 class="text-3xl font-extrabold mb-4 text-green-700 flex items-center">
-                        <span class="text-4xl mr-3">👨‍👩‍👧‍👦</span> ファミリー1日コース
-                    </h2>
-                    <p class="text-gray-600 mb-6 leading-relaxed">
-                        小さなお子様連れでも楽しめる、広々とした自然と飛行機のダイナミックな迫力をテーマにしたプランです。主要なスポットの移動は車またはバスを推奨。
-                    </p>
+
+                <div class="p-8 md:p-12 pt-0">
+                    <h3 class="text-xl font-bold mb-3 pb-1 text-gray-800">コース詳細と個別マップ（タップで場所を表示）</h3>
                     
-                    <div class="grid grid-cols-2 gap-4 mb-6 text-gray-700 font-medium">
-                        <p class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-green-500" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.414-1.414L11 9.586V6z" clip-rule="evenodd" /></svg>所要時間: 約6時間</p>
-                        <p class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-green-500" viewBox="0 0 20 20" fill="currentColor"><path d="M17.293 13.707a1 1 0 010 1.414l-2 2a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L14 14.586V10a1 1 0 012 0v4.586l1.293-1.293a1 1 0 011.414 0zM4 6a2 2 0 100 4h2a2 2 0 100-4H4zm1 10a2 2 0 100-4h2a2 2 0 100 4H5zM8 4a2 2 0 10-4 0v2h4V4z" /></svg>移動手段: 車/バス推奨</p>
+                    <!-- スポットリストをdetails/summaryで構成 -->
+                    <div class="space-y-1 mb-6 border border-gray-200 rounded-xl p-4">
+                        
+                        <!-- スポット 1 -->
+                        <details class="text-gray-700">
+                            <summary class="text-green-700 font-bold hover:bg-green-50 rounded-lg -mx-2 px-2 transition duration-150">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 arrow transform text-green-500" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg>
+                                1. 久宝寺緑地（広大な敷地でレジャー）
+                            </summary>
+                            <div class="py-2 pl-6">
+                                <p class="text-sm mb-2 text-gray-600">このスポットの正確な場所はこちらです。</p>
+                                <div class="detail-map-container">
+                                    <!-- z=17: 非常に高いズームレベルで単一の地点をピン留め -->
+                                    <iframe
+                                        src="https://maps.google.com/maps?q=久宝寺緑地&t=&z=17&ie=UTF8&iwloc=&output=embed"
+                                        title="久宝寺緑地の場所"
+                                        allowfullscreen="" 
+                                        loading="lazy">
+                                    </iframe>
+                                </div>
+                            </div>
+                        </details>
+
+                        <!-- スポット 2 -->
+                        <details class="text-gray-700">
+                            <summary class="text-green-700 font-bold hover:bg-green-50 rounded-lg -mx-2 px-2 transition duration-150">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 arrow transform text-green-500" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg>
+                                2. 久宝寺プール（夏期限定の大きな屋外プール）
+                            </summary>
+                            <div class="py-2 pl-6">
+                                <p class="text-sm mb-2 text-gray-600">このスポットの正確な場所はこちらです。</p>
+                                <div class="detail-map-container">
+                                    <iframe
+                                        src="https://maps.google.com/maps?q=久宝寺プール&t=&z=17&ie=UTF8&iwloc=&output=embed"
+                                        title="久宝寺プールの場所"
+                                        allowfullscreen="" 
+                                        loading="lazy">
+                                    </iframe>
+                                </div>
+                            </div>
+                        </details>
+
+                        <!-- スポット 3 -->
+                        <details class="text-gray-700">
+                            <summary class="text-green-700 font-bold hover:bg-green-50 rounded-lg -mx-2 px-2 transition duration-150">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 arrow transform text-green-500" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg>
+                                3. 八尾飛行場（小型機を間近で見学）
+                            </summary>
+                            <div class="py-2 pl-6">
+                                <p class="text-sm mb-2 text-gray-600">このスポットの正確な場所はこちらです。</p>
+                                <div class="detail-map-container">
+                                    <iframe
+                                        src="https://maps.google.com/maps?q=八尾飛行場&t=&z=17&ie=UTF8&iwloc=&output=embed"
+                                        title="八尾飛行場の場所"
+                                        allowfullscreen="" 
+                                        loading="lazy">
+                                    </iframe>
+                                </div>
+                            </div>
+                        </details>
+
+                        <!-- スポット 4 -->
+                        <details class="text-gray-700">
+                            <summary class="text-green-700 font-bold hover:bg-green-50 rounded-lg -mx-2 px-2 transition duration-150">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 arrow transform text-green-500" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg>
+                                4. I AM チーズ（絶品チーズケーキをお土産に）
+                            </summary>
+                            <div class="py-2 pl-6">
+                                <p class="text-sm mb-2 text-gray-600">このスポットの正確な場所はこちらです。</p>
+                                <div class="detail-map-container">
+                                    <iframe
+                                        src="https://maps.google.com/maps?q=I+AM+チーズ+八尾市&t=&z=17&ie=UTF8&iwloc=&output=embed"
+                                        title="I AM チーズの場所"
+                                        allowfullscreen="" 
+                                        loading="lazy">
+                                    </iframe>
+                                </div>
+                            </div>
+                        </details>
+                        
+                        <!-- スポット 5 -->
+                        <details class="text-gray-700">
+                            <summary class="text-green-700 font-bold hover:bg-green-50 rounded-lg -mx-2 px-2 transition duration-150">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 arrow transform text-green-500" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg>
+                                5. くまとこむぎ（八尾市内の人気パン屋さんで休憩）
+                            </summary>
+                            <div class="py-2 pl-6">
+                                <p class="text-sm mb-2 text-gray-600">このスポットの正確な場所はこちらです。</p>
+                                <div class="detail-map-container">
+                                    <iframe
+                                        src="https://maps.google.com/maps?q=くまとこむぎ+八尾市&t=&z=17&ie=UTF8&iwloc=&output=embed"
+                                        title="くまとこむぎの場所"
+                                        allowfullscreen="" 
+                                        loading="lazy">
+                                    </iframe>
+                                </div>
+                            </div>
+                        </details>
                     </div>
 
-                    <h3 class="text-xl font-bold mb-3 border-b pb-1 text-gray-800">コース詳細</h3>
-                    <ul class="space-y-3">
-                        <li class="p-3 bg-green-50 rounded-lg shadow-sm flex items-center">
-                            <span class="font-bold text-green-700 mr-3">1.</span> 久宝寺緑地（広場で遊び、バーベキューも可能）
-                        </li>
-                        <li class="p-3 bg-green-50 rounded-lg shadow-sm flex items-center">
-                            <span class="font-bold text-green-700 mr-3">2.</span> 八尾空港周辺（小型機の離着陸を見学）
-                        </li>
-                        <li class="p-3 bg-green-50 rounded-lg shadow-sm flex items-center">
-                            <span class="font-bold text-green-700 mr-3">3.</span> 八尾ご自慢スイーツ店（クレープ休憩、絶品チーズケーキをお土産に）
-                        </li>
-                    </ul>
+                    <!-- Googleマップ埋め込み (ファミリーコース - 広域マップを維持) -->
+                    <!-- z=11で広範囲をカバー -->
+                    <h4 class="text-lg font-bold mt-8 mb-3 text-gray-700">このコースの広域地図 (全てのピン表示を保証するものではありません)</h4>
+                    <div class="map-container">
+                        <iframe
+                            src="https://maps.google.com/maps?q=久宝寺緑地,久宝寺プール,八尾飛行場,I%20AM%20チーズ%20八尾市,くまとこむぎ%20八尾市&t=&z=11&ie=UTF8&iwloc=&output=embed"
+                            title="ファミリーコースのスポット地図"
+                            allowfullscreen="" 
+                            loading="lazy"
+                            class="rounded-xl">
+                        </iframe>
+                    </div>
                 </div>
             </div>
 
-            <!-- 2. 歴史まち歩きコース -->
-            <div class="course-card bg-white rounded-2xl shadow-xl overflow-hidden md:flex flex-row-reverse">
-                <div class="md:w-1/3 h-64 md:h-auto">
-                    <!-- 画像パス修正: images/history_course.jpg などに置き換えてください -->
-                    <img src="images/history_course.jpg" alt="寺内町の古い町並み" class="w-full h-full object-cover">
+            <!-- 2. 歴史まち歩きコース (個別マップ展開機能を維持) -->
+            <div class="course-card bg-white rounded-2xl shadow-xl overflow-hidden">
+                <div class="md:flex flex-row-reverse">
+                    <div class="md:w-1/3 h-64 md:h-auto">
+                        <!-- 画像プレースホルダー -->
+                        <img src="https://placehold.co/600x400/f59e0b/000000?text=Onchi+Shrine" alt="恩智神社の鳥居" class="w-full h-full object-cover">
+                    </div>
+                    <div class="md:w-2/3 p-8 md:p-12">
+                        <span class="inline-block text-sm font-semibold text-white bg-orange-500 py-1 px-3 rounded-full mb-3">#歴史散策</span>
+                        <h2 class="text-3xl font-extrabold mb-4 text-orange-700 flex items-center">
+                            <span class="text-4xl mr-3">⛩️</span> 歴史まち歩きコース
+                        </h2>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            八尾の古代から近世までの歴史を肌で感じるウォーキングコースです。主要なスポットは八尾市内の広範囲に点在しています。
+                        </p>
+                        
+                        <div class="grid grid-cols-2 gap-4 mb-6 text-gray-700 font-medium">
+                            <p class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-orange-500" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.414-1.414L11 9.586V6z" clip-rule="evenodd" /></svg>所要時間: 約4時間</p>
+                            <p class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-orange-500" viewBox="0 0 20 20" fill="currentColor"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" /></svg>移動手段: 徒歩/バス</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="md:w-2/3 p-8 md:p-12">
-                    <span class="inline-block text-sm font-semibold text-white bg-orange-500 py-1 px-3 rounded-full mb-3">#歴史散策</span>
-                    <h2 class="text-3xl font-extrabold mb-4 text-orange-700 flex items-center">
-                        <span class="text-4xl mr-3">⛩️</span> 歴史まち歩きコース
-                    </h2>
-                    <p class="text-gray-600 mb-6 leading-relaxed">
-                        八尾の古代から近世までの歴史を肌で感じるウォーキングコースです。近鉄八尾駅を中心に徒歩で巡るため、運動靴がおすすめ。
-                    </p>
+
+                <div class="p-8 md:p-12 pt-0">
+                    <h3 class="text-xl font-bold mb-3 pb-1 text-gray-800">コース詳細と個別マップ（タップで場所を表示）</h3>
                     
-                    <div class="grid grid-cols-2 gap-4 mb-6 text-gray-700 font-medium">
-                        <p class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-orange-500" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.414-1.414L11 9.586V6z" clip-rule="evenodd" /></svg>所要時間: 約4時間</p>
-                        <p class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-orange-500" viewBox="0 0 20 20" fill="currentColor"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" /></svg>移動手段: 徒歩メイン</p>
+                    <!-- スポットリストをdetails/summaryで構成 -->
+                    <div class="space-y-1 mb-6 border border-gray-200 rounded-xl p-4">
+                        
+                        <!-- スポット 1 -->
+                        <details class="text-gray-700">
+                            <summary class="text-orange-700 font-bold hover:bg-orange-50 rounded-lg -mx-2 px-2 transition duration-150">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 arrow transform text-orange-500" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg>
+                                1. しおんじやま古墳（中河内最大級の古墳を見学）
+                            </summary>
+                            <div class="py-2 pl-6">
+                                <p class="text-sm mb-2 text-gray-600">このスポットの正確な場所はこちらです。</p>
+                                <div class="detail-map-container">
+                                    <!-- z=16: 非常に高いズームレベルで単一の地点をピン留め -->
+                                    <iframe
+                                        src="https://maps.google.com/maps?q=しおんじやま古墳&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                                        title="しおんじやま古墳の場所"
+                                        allowfullscreen="" 
+                                        loading="lazy">
+                                    </iframe>
+                                </div>
+                            </div>
+                        </details>
+
+                        <!-- スポット 2 -->
+                        <details class="text-gray-700">
+                            <summary class="text-orange-700 font-bold hover:bg-orange-50 rounded-lg -mx-2 px-2 transition duration-150">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 arrow transform text-orange-500" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg>
+                                2. しおんじやま古墳学習館（古墳時代の出土品を見学）
+                            </summary>
+                            <div class="py-2 pl-6">
+                                <p class="text-sm mb-2 text-gray-600">このスポットの正確な場所はこちらです。</p>
+                                <div class="detail-map-container">
+                                    <iframe
+                                        src="https://maps.google.com/maps?q=しおんじやま古墳学習館&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                                        title="しおんじやま古墳学習館の場所"
+                                        allowfullscreen="" 
+                                        loading="lazy">
+                                    </iframe>
+                                </div>
+                            </div>
+                        </details>
+
+                        <!-- スポット 3 -->
+                        <details class="text-gray-700">
+                            <summary class="text-orange-700 font-bold hover:bg-orange-50 rounded-lg -mx-2 px-2 transition duration-150">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 arrow transform text-orange-500" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg>
+                                3. 久宝寺寺内町（江戸時代の面影を残す古い町並みを散策）
+                            </summary>
+                            <div class="py-2 pl-6">
+                                <p class="text-sm mb-2 text-gray-600">このスポットの正確な場所はこちらです。</p>
+                                <div class="detail-map-container">
+                                    <iframe
+                                        src="https://maps.google.com/maps?q=久宝寺寺内町&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                                        title="久宝寺寺内町の場所"
+                                        allowfullscreen="" 
+                                        loading="lazy">
+                                    </iframe>
+                                </div>
+                            </div>
+                        </details>
+
+                        <!-- スポット 4 -->
+                        <details class="text-gray-700">
+                            <summary class="text-orange-700 font-bold hover:bg-orange-50 rounded-lg -mx-2 px-2 transition duration-150">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 arrow transform text-orange-500" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg>
+                                4. 恩智神社（高台からの景色と歴史ある神社参拝）
+                            </summary>
+                            <div class="py-2 pl-6">
+                                <p class="text-sm mb-2 text-gray-600">このスポットの正確な場所はこちらです。</p>
+                                <div class="detail-map-container">
+                                    <iframe
+                                        src="https://maps.google.com/maps?q=恩智神社&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                                        title="恩智神社の場所"
+                                        allowfullscreen="" 
+                                        loading="lazy">
+                                    </iframe>
+                                </div>
+                            </div>
+                        </details>
                     </div>
 
-                    <h3 class="text-xl font-bold mb-3 border-b pb-1 text-gray-800">コース詳細</h3>
-                    <ul class="space-y-3">
-                        <li class="p-3 bg-orange-50 rounded-lg shadow-sm flex items-center">
-                            <span class="font-bold text-orange-700 mr-3">1.</span> 心合寺山古墳（中河内最大級の古墳を見学）
-                        </li>
-                        <li class="p-3 bg-orange-50 rounded-lg shadow-sm flex items-center">
-                            <span class="font-bold text-orange-700 mr-3">2.</span> 寺内町（江戸時代の面影を残す古い町並みを散策）
-                        </li>
-                        <li class="p-3 bg-orange-50 rounded-lg shadow-sm flex items-center">
-                            <span class="font-bold text-orange-700 mr-3">3.</span> 恩智神社（高台からの景色と歴史ある神社参拝）
-                        </li>
-                        <li class="p-3 bg-orange-50 rounded-lg shadow-sm flex items-center">
-                            <span class="font-bold text-orange-700 mr-3">4.</span> 八尾市立しおんじやま古墳学習館（出土品の見学）
-                        </li>
-                    </ul>
+                    <!-- Googleマップ埋め込み (歴史まち歩きコース - 広域マップを維持) -->
+                    <!-- ズームレベルをz=11に設定し、八尾市全体をカバー -->
+                    <h4 class="text-lg font-bold mt-8 mb-3 text-gray-700">このコースの広域地図 (全てのピン表示を保証するものではありません)</h4>
+                    <div class="map-container">
+                        <iframe
+                            src="https://maps.google.com/maps?q=しおんじやま古墳,しおんじやま古墳学習館,久宝寺寺内町,恩智神社&t=&z=11&ie=UTF8&iwloc=&output=embed"
+                            title="歴史まち歩きコースのスポット地図"
+                            allowfullscreen="" 
+                            loading="lazy"
+                            class="rounded-xl">
+                        </iframe>
+                    </div>
                 </div>
             </div>
             
-            <!-- 3. グルメ満喫コース -->
-            <div class="course-card bg-white rounded-2xl shadow-xl overflow-hidden md:flex">
-                <div class="md:w-1/3 h-64 md:h-auto">
-                    <!-- 画像パス修正: images/gourmet_course.jpg などに置き換えてください -->
-                    <img src="images/gourmet_course.jpg" alt="地元食材のうどん・ラーメン・とんかつ" class="w-full h-full object-cover">
+            <!-- 3. グルメ満喫コース (個別マップ展開機能を維持) -->
+            <div class="course-card bg-white rounded-2xl shadow-xl overflow-hidden">
+                <div class="md:flex">
+                    <div class="md:w-1/3 h-64 md:h-auto">
+                        <!-- 画像プレースホルダー -->
+                        <img src="https://placehold.co/600x400/3b82f6/ffffff?text=Tonkatsu+Manje" alt="とんかつ マンジェの極上とんかつ" class="w-full h-full object-cover">
+                    </div>
+                    <div class="md:w-2/3 p-8 md:p-12">
+                        <span class="inline-block text-sm font-semibold text-white bg-blue-500 py-1 px-3 rounded-full mb-3">#食い倒れ</span>
+                        <h2 class="text-3xl font-extrabold mb-4 text-blue-700 flex items-center">
+                            <span class="text-4xl mr-3">🍜</span> グルメ満喫コース
+                        </h2>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            八尾で有名な人気店を巡り、地元民推薦の美食を味わい尽くすコース。移動は主に近鉄八尾駅周辺の徒歩圏内です。
+                        </p>
+                        
+                        <div class="grid grid-cols-2 gap-4 mb-6 text-gray-700 font-medium">
+                            <p class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-blue-500" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.414-1.414L11 9.586V6z" clip-rule="evenodd" /></svg>所要時間: 約3〜4時間（食事時間除く）</p>
+                            <p class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-blue-500" viewBox="0 0 20 20" fill="currentColor"><path d="M17.293 13.707a1 1 0 010 1.414l-2 2a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L14 14.586V10a1 1 0 012 0v4.586l1.293-1.293a1 1 0 011.414 0zM4 6a2 2 0 100 4h2a2 2 0 100-4H4zm1 10a2 2 0 100-4h2a2 2 0 100 4H5zM8 4a2 2 0 10-4 0v2h4V4z" /></svg>移動手段: 徒歩 (近鉄八尾駅周辺)</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="md:w-2/3 p-8 md:p-12">
-                    <span class="inline-block text-sm font-semibold text-white bg-blue-500 py-1 px-3 rounded-full mb-3">#食い倒れ</span>
-                    <h2 class="text-3xl font-extrabold mb-4 text-blue-700 flex items-center">
-                        <span class="text-4xl mr-3">🍜</span> グルメ満喫コース
-                    </h2>
-                    <p class="text-gray-600 mb-6 leading-relaxed">
-                        八尾で有名な人気店を巡り、地元民推薦の美食を味わい尽くすコース。移動は主に近鉄八尾駅周辺の徒歩圏内です。
-                    </p>
-                    
-                    <div class="grid grid-cols-2 gap-4 mb-6 text-gray-700 font-medium">
-                        <p class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-blue-500" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.414-1.414L11 9.586V6z" clip-rule="evenodd" /></svg>所要時間: 約3〜4時間（食事時間除く）</p>
-                        <p class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-blue-500" viewBox="0 0 20 20" fill="currentColor"><path d="M17.293 13.707a1 1 0 010 1.414l-2 2a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L14 14.586V10a1 1 0 012 0v4.586l1.293-1.293a1 1 0 011.414 0zM4 6a2 2 0 100 4h2a2 2 0 100-4H4zm1 10a2 2 0 100-4h2a2 2 0 100 4H5zM8 4a2 2 0 10-4 0v2h4V4z" /></svg>移動手段: 徒歩 (近鉄八尾駅周辺)</p>
+
+                <div class="p-8 md:p-12 pt-0">
+                    <h3 class="text-xl font-bold mb-3 pb-1 text-gray-800">コース詳細と個別マップ（タップで場所を表示）</h3>
+
+                    <!-- スポットリストをdetails/summaryで構成 -->
+                    <div class="space-y-1 mb-6 border border-gray-200 rounded-xl p-4">
+                        
+                        <!-- スポット 1 -->
+                        <details class="text-gray-700">
+                            <summary class="text-blue-700 font-bold hover:bg-blue-50 rounded-lg -mx-2 px-2 transition duration-150">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 arrow transform text-blue-500" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg>
+                                1. とんかつ マンジェ（全国区の超人気店）
+                            </summary>
+                            <div class="py-2 pl-6">
+                                <p class="text-sm mb-2 text-gray-600">このスポットの正確な場所はこちらです。</p>
+                                <div class="detail-map-container">
+                                    <iframe
+                                        src="https://maps.google.com/maps?q=とんかつ+マンジェ&t=&z=17&ie=UTF8&iwloc=&output=embed"
+                                        title="とんかつ マンジェの場所"
+                                        allowfullscreen="" 
+                                        loading="lazy">
+                                    </iframe>
+                                </div>
+                            </div>
+                        </details>
+
+                        <!-- スポット 2 -->
+                        <details class="text-gray-700">
+                            <summary class="text-blue-700 font-bold hover:bg-blue-50 rounded-lg -mx-2 px-2 transition duration-150">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 arrow transform text-blue-500" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg>
+                                2. 讃岐屋 雅次郎（コシのある讃岐うどんを堪能）
+                            </summary>
+                            <div class="py-2 pl-6">
+                                <p class="text-sm mb-2 text-gray-600">このスポットの正確な場所はこちらです。</p>
+                                <div class="detail-map-container">
+                                    <iframe
+                                        src="https://maps.google.com/maps?q=讃岐屋+雅次郎&t=&z=17&ie=UTF8&iwloc=&output=embed"
+                                        title="讃岐屋 雅次郎の場所"
+                                        allowfullscreen="" 
+                                        loading="lazy">
+                                    </iframe>
+                                </div>
+                            </div>
+                        </details>
+
+                        <!-- スポット 3 -->
+                        <details class="text-gray-700">
+                            <summary class="text-blue-700 font-bold hover:bg-blue-50 rounded-lg -mx-2 px-2 transition duration-150">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 arrow transform text-blue-500" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg>
+                                3. 麺や 一想（濃厚な鶏白湯ラーメンで〆）
+                            </summary>
+                            <div class="py-2 pl-6">
+                                <p class="text-sm mb-2 text-gray-600">このスポットの正確な場所はこちらです。</p>
+                                <div class="detail-map-container">
+                                    <iframe
+                                        src="https://maps.google.com/maps?q=麺や+一想&t=&z=17&ie=UTF8&iwloc=&output=embed"
+                                        title="麺や 一想の場所"
+                                        allowfullscreen="" 
+                                        loading="lazy">
+                                    </iframe>
+                                </div>
+                            </div>
+                        </details>
+
+                        <!-- スポット 4 -->
+                        <details class="text-gray-700">
+                            <summary class="text-blue-700 font-bold hover:bg-blue-50 rounded-lg -mx-2 px-2 transition duration-150">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 arrow transform text-blue-500" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg>
+                                4. I AM チーズ（絶品チーズケーキをお土産に）
+                            </summary>
+                            <div class="py-2 pl-6">
+                                <p class="text-sm mb-2 text-gray-600">このスポットの正確な場所はこちらです。</p>
+                                <div class="detail-map-container">
+                                    <iframe
+                                        src="https://maps.google.com/maps?q=I+AM+チーズ+八尾市&t=&z=17&ie=UTF8&iwloc=&output=embed"
+                                        title="I AM チーズの場所"
+                                        allowfullscreen="" 
+                                        loading="lazy">
+                                    </iframe>
+                                </div>
+                            </div>
+                        </details>
+                        
+                        <!-- スポット 5 -->
+                        <details class="text-gray-700">
+                            <summary class="text-blue-700 font-bold hover:bg-blue-50 rounded-lg -mx-2 px-2 transition duration-150">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 arrow transform text-blue-500" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg>
+                                5. くまとこむぎ（こだわりパンで次の日の朝食を準備）
+                            </summary>
+                            <div class="py-2 pl-6">
+                                <p class="text-sm mb-2 text-gray-600">このスポットの正確な場所はこちらです。</p>
+                                <div class="detail-map-container">
+                                    <iframe
+                                        src="https://maps.google.com/maps?q=くまとこむぎ+八尾市&t=&z=17&ie=UTF8&iwloc=&output=embed"
+                                        title="くまとこむぎの場所"
+                                        allowfullscreen="" 
+                                        loading="lazy">
+                                    </iframe>
+                                </div>
+                            </div>
+                        </details>
                     </div>
 
-                    <h3 class="text-xl font-bold mb-3 border-b pb-1 text-gray-800">コース詳細</h3>
-                    <ul class="space-y-3">
-                        <li class="p-3 bg-blue-50 rounded-lg shadow-sm flex items-center">
-                            <span class="font-bold text-blue-700 mr-3">1.</span> とんかつ マンジェ（ランチに極上とんかつ）
-                        </li>
-                        <li class="p-3 bg-blue-50 rounded-lg shadow-sm flex items-center">
-                            <span class="font-bold text-blue-700 mr-3">2.</span> 讃岐屋 雅次郎（コシのある讃岐うどんを堪能）
-                        </li>
-                        <li class="p-3 bg-blue-50 rounded-lg shadow-sm flex items-center">
-                            <span class="font-bold text-blue-700 mr-3">3.</span> 麺や 一想（締めに鶏白湯ラーメン）
-                        </li>
-                    </ul>
+                    <!-- Googleマップ埋め込み (グルメ満喫コース - 広域マップを維持) -->
+                    <!-- ズームレベルをz=12に設定し、近隣のスポットをより網羅的に表示 -->
+                    <h4 class="text-lg font-bold mt-8 mb-3 text-gray-700">このコースの広域地図 (全てのピン表示を保証するものではありません)</h4>
+                    <div class="map-container">
+                        <iframe
+                            src="https://maps.google.com/maps?q=とんかつ+マンジェ,讃岐屋+雅次郎,麺や+一想,I+AM+チーズ+八尾市,くまとこむぎ+八尾市&t=&z=12&ie=UTF8&iwloc=&output=embed"
+                            title="グルメ満喫コースのスポット地図"
+                            allowfullscreen="" 
+                            loading="lazy"
+                            class="rounded-xl">
+                        </iframe>
+                    </div>
                 </div>
             </div>
             
