@@ -1,7 +1,7 @@
 # ✈️ もっと近くて、もっと深い。八尾（やお）
 ## 大阪・八尾市在住の地元民が案内するディープな観光ガイドサイト
 
-[![サイトへGO！](https://img.shields.io/badge/今すぐサイトを見る-https%3A%2F%2Fnaoto--guitar.github.io%2Fyao--city--fun%2Findex.html-brightgreen?style=for-the-badge&logo=github)](https://naoto-guitar.github.io/yao-city-fun/index.html)
+[![サイトへGO！](https://img.shields.io/badge/今すぐサイトを見る-https%3A%2F%2Fnfriendship.github.io%2Fyao--city--fun%2Findex.html-brightgreen?style=for-the-badge&logo=github)](https://nfriendship.github.io/yao-city-fun/index.html)
 
 ---
 
@@ -32,7 +32,7 @@
 本サイトはGitHub Pagesで公開しています。特別な環境設定は不要です。
 
 **【サイト本体】**
-[https://naoto-guitar.github.io/yao-city-fun/index.html](https://naoto-guitar.github.io/yao-city-fun/index.html)
+[https://nfriendship.github.io/yao-city-fun/index.html](https://naoto-guitar.github.io/yao-city-fun/index.html)
 
 **【フィードバック・情報提供について】**
 「ここが面白い！」「このスポットを加えてほしい！」など、八尾市の魅力に関するご意見や情報提供は大歓迎です。
