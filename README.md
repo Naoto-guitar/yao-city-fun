@@ -32,7 +32,7 @@
 本サイトはGitHub Pagesで公開しています。特別な環境設定は不要です。
 
 **【サイト本体】**
-[https://nfriendship.github.io/yao-city-fun/index.html](https://naoto-guitar.github.io/yao-city-fun/index.html)
+[https://nfriendship.github.io/yao-city-fun/index.html](https://nfriendship.github.io/yao-city-fun/index.html)
 
 **【フィードバック・情報提供について】**
 「ここが面白い！」「このスポットを加えてほしい！」など、八尾市の魅力に関するご意見や情報提供は大歓迎です。
