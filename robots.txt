@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: 
+Sitemap: https://nfriendship.github.io/yao-city-fun/sitemap.xml
