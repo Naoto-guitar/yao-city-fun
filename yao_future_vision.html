@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>八尾市の未来ビジョン | 八尾市観光おすすめサイト「やお巡り」</title>
+    <!-- Tailwind CSS を読み込み -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- スタイルとフォント (index.html と共通化) -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        :root {
+            /* キーカラーの八尾グリーン (index.html に合わせる) */
+            --yao-green: #6ba24e;
+            --yao-green-dark: #4b7a3a;
+        }
+        body {
+            font-family: 'Inter', 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', Meiryo, 'メイリオ', Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+            color: #1f2937; /* Dark gray for body text */
+            background-color: #f9fafb; /* Light background */
+            scroll-behavior: smooth;
+        }
+        .yao-bg-green { background-color: var(--yao-green); }
+        .yao-text-green { color: var(--yao-green); }
+        .yao-border-green { border-color: var(--yao-green); }
+
+        /* ヒーローセクションのオーバーレイ (このページ固有の定義) */
+        .hero-overlay {
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+        }
+        
+        /* strongタグに明示的にスタイルを適用 (index.html からコピー) */
+        strong {
+            font-weight: 800; /* より強く太字にする */
+            color: #4b5563; /* 本文中の強調色として濃いグレーを設定 */
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased">
+
+    <!-- ヘッダー (index.html と共通のナビゲーション) -->
+    <header class="yao-bg-green text-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center">
+            <h1 class="text-xl md:text-2xl font-bold mb-2 md:mb-0">
+                <!-- サイトトップへのリンク -->
+                <a href="index.html" class="hover:opacity-80 transition-opacity duration-300">八尾市観光おすすめサイト「やお巡り」</a>
+            </h1>
+            <!-- 共通ナビゲーション -->
+            <nav class="flex flex-wrap justify-center space-x-3 sm:space-x-4 text-sm sm:text-base">
+                <a href="index.html" class="hover:underline transition duration-300">ホーム</a>
+                <a href="course.html" class="hover:underline transition duration-300">モデルコース</a>
+                <a href="gourmet.html" class="hover:underline transition duration-300">グルメ</a>
+                <a href="about.html" class="hover:underline transition duration-300">八尾を知る</a>
+                <a href="onji_teramachi.html" class="hover:underline transition duration-300">恩智・寺内町</a>
+                <!-- 現在のページを強調 -->
+                <a href="yao_future_vision.html" class="font-bold border-b-2 border-white transition duration-300">未来ビジョン</a> 
+            </nav>
+        </div>
+    </header>
+
+    <!-- メインコンテンツ -->
+    <main>
+        <!-- ヒーローセクション (メインビジュアル) -->
+        <section class="relative h-[60vh] flex items-center justify-center text-white text-center bg-gray-400">
+            <!-- 背景画像（プレースホルダー） -->
+            <img src="https://placehold.co/1600x900/a0d0b0/333333?text=%E6%9C%AA%E6%9D%A5%E3%82%92%E5%89%B5%E3%82%8B%E3%81%BE%E3%81%A1%E3%80%81%E5%85%AB%E5%B0%BE" 
+                 alt="未来の八尾市のイメージ"
+                 class="absolute inset-0 w-full h-full object-cover"
+                 onerror="this.src='https://placehold.co/1600x900/a0d0b0/333333?text=Image+Not+Found'">
+            <div class="absolute inset-0 hero-overlay"></div>
+            <div class="relative z-10 px-4">
+                <h2 class="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">
+                    未来を創るまち、八尾。
+                </h2>
+                <p class="mt-4 text-lg md:text-2xl font-light" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">
+                    2030年・2040年のビジョン
+                </p>
+            </div>
+        </section>
+
+        <!-- イントロダクション -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-6 lg:px-12 max-w-4xl text-center">
+                <p class="text-lg md:text-xl leading-relaxed text-gray-700">
+                    2030年、八尾市は「伝統のものづくり」と「最先端のデジタル技術」が融合した、日本で最も人間らしいスマートシティとして。
+                    <br>
+                    そして2040年、八尾は「個人の幸せ」と「地球環境の持続可能性」を両立させる、世界でもユニークな中核都市へと変貌を遂げます。
+                </p>
+            </div>
+        </section>
+
+        <!-- 2030年ビジョン -->
+        <section id="vision2030" class="py-16 bg-gray-50">
+            <div class="container mx-auto px-6 lg:px-12 max-w-6xl">
+                <!-- スタイルを index.html に合わせる -->
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 yao-text-green">
+                    2030年：『スマート・ヒューマン・ファクトリー』都市
+                </h2>
+                <p class="text-center text-lg text-gray-600 mb-12">テクノロジーが溶け込む「温かい」街並み</p>
+
+                <div class="grid md:grid-cols-3 gap-8 mb-12">
+                    <!-- AIものづくりネットワーク -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden transition-shadow duration-300 hover:shadow-xl">
+                        <img src="https://placehold.co/600x400/e0f0e0/333333?text=AI%E3%82%82%E3%81%AE%E3%81%A5%E3%81%8F%E3%82%8A" alt="AIものづくりネットワーク" class="w-full h-48 object-cover" onerror="this.src='https://placehold.co/600x400/e0f0e0/333333?text=Image+Not+Found'">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2 yao-text-green">AIものづくりネットワーク</h3>
+                            <p class="text-gray-700">
+                                町工場がクラウドで連携し、AIと協働ロボット（コボット）が「匠の技」をサポート。世界からのニッチな高付加価値オーダーに応えます。
+                            </p>
+                        </div>
+                    </div>
+                    <!-- シームレス・モビリティ -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden transition-shadow duration-300 hover:shadow-xl">
+                        <img src="https://placehold.co/600x400/e0e0f0/333333?text=%E3%82%B9%E3%83%9E%E3%83%BC%E3%83%88%E3%82%B7%E3%83%A3%E3%83%88%E3%83%AB" alt="シームレス・モビリティ" class="w-full h-48 object-cover" onerror="this.src='https://placehold.co/600x400/e0e0f0/333333?text=Image+Not+Found'">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2 yao-text-green">シームレス・モビリティ (MaaS)</h3>
+                            <p class="text-gray-700">
+                                AIオンデマンド配車「八尾スマートシャトル」が市内を網羅。八尾空港は「空飛ぶクルマ」の実証ハブとして機能し始めます。
+                            </p>
+                        </div>
+                    </div>
+                    <!-- グリーン・イノベーション地区 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden transition-shadow duration-300 hover:shadow-xl">
+                        <img src="https://placehold.co/600x400/d0f0d0/333333?text=%E3%82%B9%E3%83%9E%E3%83%BC%E3%83%88%E8%BE%B2%E6%A5%AD" alt="グリーン・イノベーション地区" class="w-full h-48 object-cover" onerror="this.src='https://placehold.co/600x400/d0f0d0/333333?text=Image+Not+Found'">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2 yao-text-green">グリーン・イノベーション地区</h3>
+                            <p class="text-gray-700">
+                                久宝寺地区はスマート農業の試験場に。「八尾えだまめ」や「若ごぼう」がデータに基づき品質・収穫量ともに最大化されます。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="my-12 border-gray-300">
+
+                <h3 class="text-2xl font-bold text-center mb-8 text-gray-700">人々の暮らし：『ハイブリッド・コミュニティ』の実現</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h4 class="text-lg font-bold mb-2 yao-text-green">新しい働き方</h4>
+                        <p class="text-gray-700">リモートと地元のスマート工場でのコンサルタントといったハイブリッドな働き方が実践され、若者は「ネオ町工場」で起業します。</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h4 class="text-lg font-bold mb-2 yao-text-green">デジタルとアナログが交差する「河内音頭」</h4>
+                        <p class="text-gray-700">伝統の盆踊りはVR/ARで世界に配信。アバター姿の海外ファンも参加し、グローバルな文化交流の場となります。</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md md:col-span-2 lg:col-span-1">
+                        <h4 class="text-lg font-bold mb-2 yao-text-green">データで見守る「ご近所づきあい」</h4>
+                        <p class="text-gray-700">AIとIoTセンサーが高齢者の生活を見守り、異常を感知すると即座にアラート。テクノロジーが「向こう三軒両隣」の役割を補強します。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2040年ビジョン -->
+        <section id="vision2040" class="py-16 bg-white">
+            <div class="container mx-auto px-6 lg:px-12 max-w-6xl">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 yao-text-green">
+                    🚀 2040年：『ウェルビーイング創造拠点』
+                </h2>
+                <p class="text-center text-lg text-gray-600 mb-12">『自律分散型』の超循環都市</p>
+
+                <div class="grid md:grid-cols-3 gap-8 mb-12">
+                    <!-- AAMハブ・八尾空港 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden transition-shadow duration-300 hover:shadow-xl">
+                        <img src="https://placehold.co/600x400/d0e0ff/333333?text=AAM%E3%83%8F%E3%83%96%E7%A9%BA%E6%B8%AF" alt="AAMハブ・八尾空港" class="w-full h-48 object-cover" onerror="this.src='https://placehold.co/600x400/d0e0ff/333333?text=Image+Not+Found'">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2 yao-text-green">AAMハブ・八尾空港</h3>
+                            <p class="text-gray-700">
+                                「空飛ぶクルマ」が完全に実用化。八尾空港は関西のAAM（先進的航空モビリティ）の主要ハブとなり、主要都市と数分で結ばれます。
+                            </p>
+                        </div>
+                    </div>
+                    <!-- 都市OSと「超」ものづくり -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden transition-shadow duration-300 hover:shadow-xl">
+                        <img src="https://placehold.co/600x400/c0f0c0/333333?text=%E9%83%BD%E5%B8%82OS+%26+%E8%B6%85%E3%82%82%E3%81%AE%E3%81%A5%E3%81%8F%E3%82%8D" alt="都市OSと「超」ものづくり" class="w-full h-48 object-cover" onerror="this.src='https://placehold.co/600x400/c0f0c0/333333?text=Image+Not+Found'">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2 yao-text-green">都市OSと「超」ものづくり</h3>
+                            <p class="text-gray-700">
+                                AIが都市機能を最適化。工場は「バイオ・ファブリケーション」など高次のものづくりへシフト。「八尾にしか作れない」ブランドが確立します。
+                            </p>
+                        </div>
+                    </div>
+                    <!-- エネルギー・食糧の完全自給 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden transition-shadow duration-300 hover:shadow-xl">
+                        <img src="https://placehold.co/600x400/fff0d0/333333?text=%E3%82%A8%E3%83%8D%E3%83%AB%E3%82%AE%E3%83%BC%E3%83%BB%E9%A3%9F%E7%B3%A7%E8%87%AA%E7%B5%A6" alt="エネルギー・食糧の完全自給" class="w-full h-48 object-cover" onerror="this.src='https://placehold.co/600x400/fff0d0/333333?text=Image+Not+Found'">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2 yao-text-green">エネルギー・食糧の完全自給</h3>
+                            <p class="text-gray-700">
+                                全ての建物がエネルギーを生み出し、地域で融通。高層型植物工場が、安全な野菜を一年中供給（もちろん「えだまめ」も）。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <hr class="my-12 border-gray-300">
+
+                <h3 class="text-2xl font-bold text-center mb-8 text-gray-700">人々の暮らし：『生涯現役』と『超個性の尊重』</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h4 class="text-lg font-bold mb-2 yao-text-green">「引退」のない社会</h4>
+                        <p class="text-gray-700">軽量パワーアシスト・スーツやARグラスが普及。80代の熟練工がAIと対話しながら若者に技術を伝承します。</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h4 class="text-lg font-bold mb-2 yao-text-green">パーソナライズド・ヘルスケア</h4>
+                        <p class="text-gray-700">AIが健康を24時間モニタリングし、「予兆の段階で防ぐ」医療が実現。八尾弁のAIアシスタントが優しくアドバイスをくれます。</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md md:col-span-2 lg:col-span-1">
+                        <h4 class="text-lg font-bold mb-2 yao-text-green">メタバースとリアルの共振</h4>
+                        <p class="text-gray-700">河内音頭はリアルとメタバースで同時開催。八尾の「ものづくり」精神が、人々を熱狂させるデジタル体験の創造にも発揮されます。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 結論 -->
+        <section id="conclusion" class="py-20 bg-white"> <!-- 背景色を index.html のセクションに合わせる -->
+            <div class="container mx-auto px-6 lg:px-12 max-w-4xl text-center bg-gray-800 text-white rounded-lg shadow-xl p-8 md:p-12"> <!-- 結論部分をカード風に -->
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 text-green-300">
+                    結論：未来の八尾、その核心にあるもの
+                </h2>
+                <p class="text-lg md:text-xl leading-relaxed text-gray-100 mb-6">
+                    私が予測する八尾の未来は、決して冷たいテクノロジー都市ではありません。
+                    八尾が持つ「やってみなはれ」の精神、人間の手触りを大切にする「ものづくり」の心、そして世代や立場を超えて盛り上がる「河内音頭」の熱気。
+                </p>
+                <p class="text-lg md:text-xl leading-relaxed text-gray-100 font-bold">
+                    これら八尾固有のDNAが、AI、ロボティクス、AAMといった最先端技術と結びつくことで、どこよりも人間らしく、創造的で、持続可能な街が生まれるのです。
+                </p>
+                <p class="mt-8 text-lg text-gray-200">
+                    2030年も2040年も、八尾はきっと、日本の、いや世界の「未来の作り方」を示すモデルとなっていることでしょう。
+                </p>
+            </div>
+        </section>
+
+        <!-- 問い合わせセクションは削除 -->
+
+    </main>
+
+    <!-- フッター (index.html と共通化) -->
+    <footer class="yao-bg-green text-white p-6 text-center shadow-inner mt-16">
+        <p class="text-sm">
+            © 八尾市観光おすすめサイト「やお巡り」
+        </p>
+    </footer>
+
+</body>
+</html>
+
+
