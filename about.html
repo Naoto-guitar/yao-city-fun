@@ -3,14 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>河内の要（かなめ）　－　八尾市が刻んだ時代の航跡 | もっと近くて、もっと深い。八尾（やお）</title>
+    
+    <!-- SEO改善: タイトルタグを最適化。検索キーワードと魅力を両立 -->
+    <title>【八尾市の歴史】古墳からものづくりまで - 河内の要所を探る | やお巡り</title>
+    
+    <!-- SEO改善: descriptionメタタグを追加。ページの要約を記述 -->
+    <meta name="description" content="大阪府八尾市の豊かな歴史を紐解きます。巨大な心合寺山古墳、自治都市として栄えた八尾寺内町、河内木綿で活躍した商人たち、そして現代のものづくりまで。古代から続く八尾の魅力を分かりやすく解説。">
+
+    <!-- SEO改善: OGP (Open Graph Protocol) タグを追加。SNSシェア時の表示を最適化 -->
+    <meta property="og:title" content="【八尾市の歴史】古墳からものづくりまで - 河内の要所を探る | やお巡り">
+    <meta property="og:description" content="大阪府八尾市の豊かな歴史を紐解きます。巨大な心合寺山古墳や八尾寺内町、現代のものづくりまで、古代から続く魅力を分かりやすく解説。">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://あなたのドメイン/history.html"> <!-- TODO: 正式なURLに書き換えてください -->
+    <meta property="og:image" content="https://あなたのドメイン/images/shionji_map.jpg"> <!-- TODO: シェア時に表示させたい画像のURLに書き換えてください -->
+    <meta property="og:site_name" content="もっと近くて、もっと深い。八尾（やお）">
+    <meta name="twitter:card" content="summary_large_image">
+
     <!-- Tailwind CSS CDNを読み込み -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
         :root {
             --yao-green: #6ba24e;
-            --yao-brown: #795548; /* 歴史の重みを出すために茶系を導入 */
+            --yao-brown: #795548;
         }
         body {
             font-family: 'Inter', 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', Meiryo, 'メイリオ', Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
@@ -37,12 +52,55 @@
             background-color: var(--yao-brown);
             border-radius: 2px;
         }
-        /* strongタグに明示的にスタイルを適用 */
         strong {
-            font-weight: 800; /* より強く太字にする */
-            color: #4b5563; /* 本文中の強調色として濃いグレーを設定 */
+            font-weight: 800;
+            color: #4b5563;
         }
     </style>
+
+    <!-- SEO改善: 構造化データ (JSON-LD) を追加。検索エンジンにページ構造を正確に伝える -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://あなたのドメイン/history.html"
+      },
+      "headline": "【八尾市の歴史】古墳時代からものづくりの現代まで - 河内の要所を探る",
+      "description": "大阪府八尾市の豊かな歴史を紐解きます。巨大な心合寺山古墳、自治都市として栄えた八尾寺内町、河内木綿で活躍した商人たち、そして現代のものづくりまで。古代から続く八尾の魅力を分かりやすく解説。",
+      "image": "https://あなたのドメイン/images/shionji_map.jpg",  
+      "author": {
+        "@type": "Organization",
+        "name": "やお巡り"
+      },  
+      "publisher": {
+        "@type": "Organization",
+        "name": "やお巡り",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://あなたのドメイン/logo.png"
+        }
+      },
+      "datePublished": "2025-11-08"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "トップ",
+        "item": "https://あなたのドメイン/index.html" 
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "八尾の歴史"
+      }]
+    }
+    </script>
 </head>
 <body class="antialiased">
 
@@ -60,9 +118,9 @@
             </div>
         </div>
     </nav>
-
+    
     <!-- ページヘッダー -->
-    <header class="bg-gray-800 text-white py-20 mb-16 shadow-lg border-b-8 yao-border-brown">
+    <header class="bg-gray-800 text-white py-20 mb-12 shadow-lg border-b-8 yao-border-brown">
         <div class="container mx-auto px-4 text-center">
             <h1 class="text-4xl sm:text-5xl font-extrabold mb-4 tracking-tight">河内の要（かなめ）　－　八尾市が刻んだ時代の航跡</h1>
             <p class="text-lg sm:text-xl font-light opacity-90">古代から現代へ。大和と難波を結んだ交通の要衝の物語</p>
@@ -71,6 +129,19 @@
 
     <!-- メインコンテンツ -->
     <main class="container mx-auto px-4 max-w-5xl">
+
+        <!-- SEO改善: パンくずリストを追加。ユーザビリティとSEOを向上 -->
+        <nav class="text-sm mb-8" aria-label="breadcrumb">
+            <ol class="list-none p-0 inline-flex">
+                <li class="flex items-center">
+                    <a href="index.html" class="text-gray-600 hover:text-yao-green">トップ</a>
+                    <svg class="fill-current w-3 h-3 mx-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg>
+                </li>
+                <li class="flex items-center">
+                    <span class="text-gray-500">八尾の歴史</span>
+                </li>
+            </ol>
+        </nav>
 
         <!-- 導入文 -->
         <section class="mb-16 p-8 bg-white rounded-xl shadow-xl border-l-8 yao-border-green">
@@ -85,8 +156,22 @@
             </p>
         </section>
 
+        <!-- SEO改善: 目次を追加。ページ内回遊性を高め、ユーザー体験を向上 -->
+        <section id="table-of-contents" class="mb-16 p-6 bg-gray-50 rounded-lg border-2 border-gray-200">
+            <h2 class="text-xl font-bold mb-4 yao-text-brown flex items-center">
+                <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
+                このページの目次
+            </h2>
+            <ul class="list-disc list-inside space-y-2">
+                <li><a href="#section-1" class="text-lg text-gray-700 hover:text-yao-green hover:underline">古代：河内の勢力と王権の足跡</a></li>
+                <li><a href="#section-2" class="text-lg text-gray-700 hover:text-yao-green hover:underline">中世・近世：自衛都市として、そして河内商人の台頭</a></li>
+                <li><a href="#section-3" class="text-lg text-gray-700 hover:text-yao-green hover:underline">現代：ものづくりと航空のまちへ</a></li>
+                <li><a href="#section-4" class="text-lg text-gray-700 hover:text-yao-green hover:underline">結びにかえて</a></li>
+            </ul>
+        </section>
+
         <!-- セクション1: 古代史とヤマト政権との関わり -->
-        <section class="mb-16">
+        <section id="section-1" class="mb-16 scroll-mt-20"> <!-- scroll-mt-20はアンカーリンク時のヘッダーとの被りを防ぐ -->
             <h2 class="section-header text-3xl font-extrabold yao-text-brown">
                 I. 古代：河内の勢力と王権の足跡
             </h2>
@@ -101,7 +186,8 @@
                 <p class="text-lg leading-relaxed text-gray-700 mt-4">
                     また、心合寺山古墳周辺には群集墳も多数点在しており、その構造は“ひとりの豪族”のものというよりも、都市的ともいえる集団の営みを匂わせます。八尾・河内の地が「王権と物流の交差点」であったことを、確かなものとして感じさせる証です。
                 </p>
-                <img src="images/shionji_map.jpg" alt="心合寺山古墳の航空写真、または復元図" class="w-full h-auto object-cover rounded-lg my-6 shadow-md" onerror="this.onerror=null;this.src='images/shionji_map.jpg';">
+                <!-- SEO改善: alt属性をより具体的に記述 -->
+                <img src="images/shionji_map.jpg" alt="八尾市の歴史を象徴する、5世紀中頃に築造された心合寺山古墳の復元図" class="w-full h-auto object-cover rounded-lg my-6 shadow-md" onerror="this.onerror=null;this.src='images/shionji_map.jpg';">
 
                 <h3 class="text-2xl font-bold mb-4 mt-8 text-gray-800 border-b pb-2">2. 古代官道を歩く：竹内街道と渋川道</h3>
                 <p class="text-lg leading-relaxed text-gray-700">
@@ -117,7 +203,7 @@
         </section>
 
         <!-- セクション2: 中世・近世：自治と経済の中心 -->
-        <section class="mb-16">
+        <section id="section-2" class="mb-16 scroll-mt-20">
             <h2 class="section-header text-3xl font-extrabold yao-text-brown">
                 II. 中世・近世：自衛都市として、そして河内商人の台頭
             </h2>
@@ -132,7 +218,8 @@
                 <p class="text-lg leading-relaxed text-gray-700 italic border-l-4 pl-4 mt-4 border-gray-500">
                     この寺内町の町並みは、今も街路・屋敷構え・石畳などに当時の機能を匂わせ、訪れる者に「戦国という日常にならなかった戦場の町」の気配を宿します。
                 </p>
-                <img src="images/jinaicho.jpg" alt="八尾寺内町の伝統的な町家と狭い路地" class="w-full h-auto object-cover rounded-lg my-6 shadow-md" onerror="this.onerror=null;this.src='images/jinaicho.jpg';">
+                 <!-- SEO改善: alt属性をより具体的に記述 -->
+                <img src="images/jinaicho.jpg" alt="戦国時代の面影を残す八尾寺内町の伝統的な町家と石畳の路地" class="w-full h-auto object-cover rounded-lg my-6 shadow-md" onerror="this.onerror=null;this.src='images/jinaicho.jpg';">
 
                 <h3 class="text-2xl font-bold mb-4 mt-8 text-gray-800 border-b pb-2">2. 綿花と交易：河内商人の躍進</h3>
                 <p class="text-lg leading-relaxed text-gray-700">
@@ -148,7 +235,7 @@
         </section>
         
         <!-- セクション3: 現代へのつながり -->
-        <section class="mb-16">
+        <section id="section-3" class="mb-16 scroll-mt-20">
             <h2 class="section-header text-3xl font-extrabold yao-text-brown">
                 III. 現代：ものづくりと航空のまちへ
             </h2>
@@ -175,7 +262,7 @@
         </section>
 
         <!-- セクション4: 結びにかえて (結論) -->
-        <section class="mb-16 p-8 bg-gray-100 rounded-xl shadow-inner">
+        <section id="section-4" class="mb-16 p-8 bg-gray-100 rounded-xl shadow-inner scroll-mt-20">
             <h2 class="section-header text-3xl font-extrabold yao-text-brown border-b-0 mb-4">
                 結びにかえて
             </h2>
@@ -211,10 +298,12 @@
     <!-- フッター -->
     <footer class="bg-gray-800 text-white p-6 text-center shadow-inner mt-16">
         <p class="text-sm">
-            © 八尾市観光おすすめサイト「やお巡り」 | 歴史調査協力：八尾市郷土研究会
+            <!-- 改善: ©を実体参照に修正 -->
+            &copy; 八尾市観光おすすめサイト「やお巡り」 | 歴史調査協力：八尾市郷土研究会<br>
+            <!-- 改善: 最終更新日を追加。情報の鮮度をアピール -->
+            最終更新日: 2025年11月8日
         </p>
     </footer>
 
 </body>
 </html>
-
