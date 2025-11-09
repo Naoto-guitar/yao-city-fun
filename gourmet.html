@@ -3,7 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>八尾市観光ガイド｜地元グルメ特集</title>
+    
+    <!-- === SEO強化: タイトルとディスクリプションの最適化 === -->
+    <title>【大阪・八尾グルメ】行列のできる名店7選と特産品（とんかつ, うどん, ラーメン） | やお巡り</title>
+    <meta name="description" content="大阪府八尾市で絶対食べたい地元グルメをご紹介。全国からファンが集う行列店（とんかつ、ラーメン）や、佐一郎屋敷のような料亭、讃岐うどんの名店、そして八尾若ごぼうなどの特産品情報まで、八尾観光・おでかけの参考に。">
+    <meta name="keywords" content="八尾市, グルメ, 八尾グルメ, とんかつ, マンジェ, ラーメン, うどん, 特産品, 佐一郎屋敷, 観光, 大阪">
+
+    <!-- === SEO強化: パンくずリストの構造化データ (JSON-LD) === -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "ホーム (やお巡り)",
+          "item": "index.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "八尾の地元グルメ特集",
+          "item": "gourmet.html" 
+          /* ページファイル名に合わせてURLを調整してください */
+        }
+      ]
+    }
+    </script>
+    
     <!-- Tailwind CSS CDNを読み込み -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Interフォントを適用しつつ、日本語フォントを優先する設定 -->
@@ -61,6 +89,19 @@
             </div>
         </div>
     </nav>
+    
+    <!-- === SEO強化: パンくずリストの追加 (UI部分) === -->
+    <div class="bg-gray-100 py-3 border-b border-gray-200">
+        <div class="container mx-auto px-4 max-w-7xl text-sm text-gray-500">
+            <nav aria-label="Breadcrumb">
+                <ol class="flex space-x-2">
+                    <li><a href="index.html" class="hover:text-gray-700">ホーム</a></li>
+                    <li aria-hidden="true">/</li>
+                    <li><span class="font-medium text-gray-800" aria-current="page">八尾の地元グルメ特集</span></li>
+                </ol>
+            </nav>
+        </div>
+    </div>
 
     <!-- ページHEROセクション -->
     <header class="relative h-96 bg-gray-900 flex items-center justify-center overflow-hidden text-white">
@@ -82,28 +123,28 @@
         </div>
     </header>
 
-    <!-- メインコンテンツ -->
-    <main class="container mx-auto px-4 py-16 md:py-24 max-w-7xl">
+    <!-- メインコンテンツ (role="main"でセマンティクス強化) -->
+    <main class="container mx-auto px-4 py-16 md:py-24 max-w-7xl" role="main">
         
-        <!-- SECTION 1: 地元民が本当は教えたくない名店 (佐一郎屋敷を先頭に配置) -->
-        <section id="restaurants" class="mb-20 bg-white p-8 md:p-12 rounded-2xl shadow-2xl">
-            <h2 class="text-3xl md:text-4xl font-extrabold mb-10 text-center text-gray-800">
-                <span class="yao-text-green border-b-4 yao-border-green pb-1">地元民が本当は教えたくない名店スポットライト</span>
+        <!-- SECTION 1: 地元民が本当は教えたくない名店 -->
+        <section id="restaurants" class="mb-20 bg-white p-8 md:p-12 rounded-2xl shadow-2xl" aria-labelledby="restaurants-title">
+            <h2 id="restaurants-title" class="text-3xl md:text-4xl font-extrabold mb-10 text-center text-gray-800">
+                <span class="yao-text-green border-b-4 yao-border-green pb-1">八尾市で行列ができる名店スポットライト7選</span>
             </h2>
 
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 
-                <!-- 1. 佐一郎屋敷 (先頭に移動) -->
+                <!-- 1. 佐一郎屋敷 -->
                 <div class="spotlight-card border-t-8 border-purple-500 rounded-xl shadow-lg p-6">
                     <a href="https://s.tabelog.com/osaka/A2707/A270705/27087359/" target="_blank" rel="noopener noreferrer" class="group block mb-1">
                         <h3 class="text-2xl font-bold text-purple-700 flex items-center hover:text-purple-900 transition duration-150">
                             <span class="text-4xl mr-2 transition-transform group-hover:rotate-1">🍵</span> 
-                            佐一郎屋敷
+                            佐一郎屋敷（懐石・ふぐ料理）
                             <!-- 外部リンクアイコン (SVG) -->
                             <svg xmlns="http://www.w3.org/2000/svg" class="external-link-icon text-purple-500 group-hover:text-purple-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
                         </h3>
                     </a>
-                    <p class="text-xs text-purple-500 mb-4">[タイトルクリックで公式サイトへ遷移します]</p>
+                    <p class="text-xs text-purple-500 mb-4">[タイトルクリックで食べログへ遷移します]</p>
                     <p class="text-gray-600 mb-4 text-sm">
                         築約200年の歴史を持つ庄屋屋敷を改装した格調高い料亭。和+ゴージャスのこの雰囲気は他にないですよ。フグってこんなにおいしいのか、と思い知らせてくれる本格的な懐石料理が堪能できます。特別な日に特別な人を招待するのにうってつけ。絶対に外しませんよ！
                     </p>
@@ -113,7 +154,7 @@
                     </div>
                 </div>
 
-                <!-- 2. とんかつ マンジェ (元の1番から移動) -->
+                <!-- 2. とんかつ マンジェ -->
                 <div class="spotlight-card border-t-8 border-red-500 rounded-xl shadow-lg p-6">
                     <a href="https://tonkatsumanger.com/" target="_blank" rel="noopener noreferrer" class="group block mb-1">
                         <h3 class="text-2xl font-bold text-red-700 flex items-center hover:text-red-900 transition duration-150">
@@ -133,17 +174,17 @@
                     </div>
                 </div>
 
-                <!-- 3. 讃岐屋 雅次郎 (元の2番から移動) -->
+                <!-- 3. 讃岐屋 雅次郎 -->
                 <div class="spotlight-card border-t-8 border-blue-500 rounded-xl shadow-lg p-6">
                     <a href="https://s.tabelog.com/osaka/A2707/A270705/27019261/" target="_blank" rel="noopener noreferrer" class="group block mb-1">
                         <h3 class="text-2xl font-bold text-blue-700 flex items-center hover:text-blue-900 transition duration-150">
                             <span class="text-4xl mr-2 transition-transform group-hover:scale-105">🍜</span> 
-                            讃岐屋 雅次郎
+                            讃岐屋 雅次郎（讃岐うどん）
                             <!-- 外部リンクアイコン (SVG) -->
                             <svg xmlns="http://www.w3.org/2000/svg" class="external-link-icon text-blue-500 group-hover:text-blue-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
                         </h3>
                     </a>
-                    <p class="text-xs text-blue-500 mb-4">[タイトルクリックで公式サイトへ遷移します]</p>
+                    <p class="text-xs text-blue-500 mb-4">[タイトルクリックで食べログへ遷移します]</p>
                     <p class="text-gray-600 mb-4 text-sm">
                         関西うどん界で名を馳せる名店。打ち立て、茹でたてのコシの強いうどんは、地元八尾でも愛されています。つゆも上品で深い味わいが特徴です。「今日外食だ。確っっ実に美味しいものが食べたい！」という場合、ここに行きましょう！
                     </p>
@@ -152,18 +193,18 @@
                         <p><span class="font-bold">アクセス:</span> 近鉄八尾駅より徒歩圏内</p>
                     </div>
                 </div>
-                
-                <!-- 4. 麺や 一想 (元の3番から移動) -->
+
+                <!-- 4. 麺や 一想 -->
                 <div class="spotlight-card border-t-8 border-yellow-700 rounded-xl shadow-lg p-6">
                     <a href="https://s.tabelog.com/osaka/A2707/A270705/27091749/" target="_blank" rel="noopener noreferrer" class="group block mb-1">
                         <h3 class="text-2xl font-bold text-yellow-700 flex items-center hover:text-yellow-900 transition duration-150">
                             <span class="text-4xl mr-2 transition-transform group-hover:scale-110">🍥</span> 
-                            麺や 一想
+                            麺や 一想（鶏白湯ラーメン）
                             <!-- 外部リンクアイコン (SVG) -->
                             <svg xmlns="http://www.w3.org/2000/svg" class="external-link-icon text-yellow-500 group-hover:text-yellow-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
                         </h3>
                     </a>
-                    <p class="text-xs text-yellow-500 mb-4">[タイトルクリックで公式サイトへ遷移します]</p>
+                    <p class="text-xs text-yellow-500 mb-4">[タイトルクリックで食べログへ遷移します]</p>
                     <p class="text-gray-600 mb-4 text-sm">
                         ラーメン百名店にも選出された実力派。看板メニューの鶏白湯スープは、まろやかでクリーミーながらも飲み干せるほどあっさりとしています。｢ラーメン好きやねん。｣といいながらまだここに行ってない人、早く行きましょう！
                     </p>
@@ -173,17 +214,17 @@
                     </div>
                 </div>
 
-                <!-- 5. らーめん工房 RISE (新規追加) -->
+                <!-- 5. らーめん工房 RISE -->
                 <div class="spotlight-card border-t-8 border-orange-500 rounded-xl shadow-lg p-6">
                     <a href="https://s.tabelog.com/osaka/A2707/A270705/27051582/" target="_blank" rel="noopener noreferrer" class="group block mb-1">
                         <h3 class="text-2xl font-bold text-orange-700 flex items-center hover:text-orange-900 transition duration-150">
                             <span class="text-4xl mr-2 transition-transform group-hover:rotate-[-5deg]">🍜</span> 
-                            らーめん工房 RISE
+                            らーめん工房 RISE（塩ラーメン）
                             <!-- 外部リンクアイコン (SVG) -->
                             <svg xmlns="http://www.w3.org/2000/svg" class="external-link-icon text-orange-500 group-hover:text-orange-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
                         </h3>
                     </a>
-                    <p class="text-xs text-orange-500 mb-4">[タイトルクリックで公式サイトへ遷移します]</p>
+                    <p class="text-xs text-orange-500 mb-4">[タイトルクリックで食べログへ遷移します]</p>
                     <p class="text-gray-600 mb-4 text-sm">
                         塩ラーメンのうまい店知らないか！？と聞かれたら、食い気味でここを教えましょう！塩以外にも、黒醤油、海老醤油、ともに絶品。つまり3回は行かないとダメですね。地元で愛される確かな一杯、ここにアリ！
                     </p>
@@ -193,12 +234,12 @@
                     </div>
                 </div>
 
-                <!-- 6. I AM チーズ (元の4番から移動) -->
+                <!-- 6. I AM チーズ -->
                 <div class="spotlight-card border-t-8 border-pink-500 rounded-xl shadow-lg p-6">
                     <a href="https://iam-cheese.com/" target="_blank" rel="noopener noreferrer" class="group block mb-1">
                         <h3 class="text-2xl font-bold text-pink-700 flex items-center hover:text-pink-900 transition duration-150">
                             <span class="text-4xl mr-2 transition-transform group-hover:rotate-3">🧀</span> 
-                            I AM チーズ
+                            I AM チーズ（チーズケーキ専門店）
                             <!-- 外部リンクアイコン (SVG) -->
                             <svg xmlns="http://www.w3.org/2000/svg" class="external-link-icon text-pink-500 group-hover:text-pink-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
                         </h3>
@@ -213,17 +254,17 @@
                     </div>
                 </div>
 
-                <!-- 7. くまとこむぎ (元の5番から移動) -->
+                <!-- 7. くまとこむぎ -->
                 <div class="spotlight-card border-t-8 border-teal-500 rounded-xl shadow-lg p-6">
                     <a href="https://s.tabelog.com/osaka/A2707/A270705/27127789/" target="_blank" rel="noopener noreferrer" class="group block mb-1">
                         <h3 class="text-2xl font-bold text-teal-700 flex items-center hover:text-teal-900 transition duration-150">
                             <span class="text-4xl mr-2 transition-transform group-hover:scale-95">🥞</span> 
-                            くまとこむぎ
+                            くまとこむぎ（クレープ・ガレット）
                             <!-- 外部リンクアイコン (SVG) -->
                             <svg xmlns="http://www.w3.org/2000/svg" class="external-link-icon text-teal-500 group-hover:text-teal-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
                         </h3>
                     </a>
-                    <p class="text-xs text-teal-500 mb-4">[タイトルクリックで公式サイトへ遷移します]</p>
+                    <p class="text-xs text-teal-500 mb-4">[タイトルクリックで食べログへ遷移します]</p>
                     <p class="text-gray-600 mb-4 text-sm">
                         近鉄八尾駅近くにある人気のクレープ・ガレット専門店 。リーズナブルな値段で、季節限定メニューも魅力です。散策途中の休憩にぴったり。偶然散歩中に見つけてからやみつきです。
                     </p>
@@ -240,54 +281,54 @@
             </div>
         </section>
 
-        <!-- SECTION 2: グルメ写真ギャラリー (佐一郎屋敷を先頭に配置) -->
-        <section id="gallery" class="mb-20">
-            <h2 class="text-3xl md:text-4xl font-extrabold mb-8 text-center text-gray-800">
+        <!-- SECTION 2: グルメ写真ギャラリー -->
+        <section id="gallery" class="mb-20" aria-labelledby="gallery-title">
+            <h2 id="gallery-title" class="text-3xl md:text-4xl font-extrabold mb-8 text-center text-gray-800">
                 <span class="yao-text-green border-b-4 yao-border-green pb-1">管理人オススメ！地元の名店グルメギャラリー</span>
             </h2>
             <!-- グリッド数を7に拡張 -->
             <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
                 
-                <!-- 1. 佐一郎屋敷 (先頭に移動) -->
+                <!-- 1. 佐一郎屋敷 -->
                 <div class="space-y-2 transition duration-300 hover:scale-[1.02] cursor-pointer">
                     <!-- プレースホルダー画像を使用 (和食/懐石のイメージ) -->
-                    <img src="images/saichiro1.jpg" alt="佐一郎屋敷の懐石料理" class="w-full h-48 object-cover rounded-xl shadow-md">
+                    <img src="images/saichiro1.jpg" alt="佐一郎屋敷の本格的な懐石料理。特別な日のフグ料理におすすめ。" class="w-full h-48 object-cover rounded-xl shadow-md">
                     <p class="text-center text-sm font-semibold text-gray-700">佐一郎屋敷（懐石料理）</p>
                 </div>
 
-                <!-- 2. マンジェ (元の1番から移動) -->
+                <!-- 2. マンジェ -->
                 <div class="space-y-2 transition duration-300 hover:scale-[1.02] cursor-pointer">
-                    <img src="images/gourmet_2.jpg" alt="マンジェのとんかつ" class="w-full h-48 object-cover rounded-xl shadow-md">
+                    <img src="images/gourmet_2.jpg" alt="全国区で有名なとんかつマンジェの肉厚でジューシーなとんかつ" class="w-full h-48 object-cover rounded-xl shadow-md">
                     <p class="text-center text-sm font-semibold text-gray-700">とんかつ マンジェ</p>
                 </div>
 
-                <!-- 3. 雅次郎 (元の2番から移動) -->
+                <!-- 3. 雅次郎 -->
                 <div class="space-y-2 transition duration-300 hover:scale-[1.02] cursor-pointer">
-                    <img src="images/gourmet_3.jpg" alt="雅次郎のうどん" class="w-full h-48 object-cover rounded-xl shadow-md">
+                    <img src="images/gourmet_3.jpg" alt="コシの強い讃岐屋雅次郎のぶっかけうどん" class="w-full h-48 object-cover rounded-xl shadow-md">
                     <p class="text-center text-sm font-semibold text-gray-700">讃岐屋 雅次郎（うどん）</p>
                 </div>
 
-                <!-- 4. 一想 (元の3番から移動) -->
+                <!-- 4. 一想 -->
                 <div class="space-y-2 transition duration-300 hover:scale-[1.02] cursor-pointer">
-                    <img src="images/gourmet_4.jpg" alt="一想のラーメン" class="w-full h-48 object-cover rounded-xl shadow-md">
+                    <img src="images/gourmet_4.jpg" alt="百名店にも選ばれた麺や一想の鶏白湯ラーメン" class="w-full h-48 object-cover rounded-xl shadow-md">
                     <p class="text-center text-sm font-semibold text-gray-700">麺や 一想（鶏白湯）</p>
                 </div>
 
-                <!-- 5. らーめん工房 RISE (新規追加) -->
+                <!-- 5. らーめん工房 RISE -->
                 <div class="space-y-2 transition duration-300 hover:scale-[1.02] cursor-pointer">
-                    <img src="images/ramen_rise.png" alt="らーめん工房 RISEのラーメン" class="w-full h-48 object-cover rounded-xl shadow-md">
+                    <img src="images/ramen_rise.png" alt="人気の塩ラーメンを提供するらーめん工房RISEの一杯" class="w-full h-48 object-cover rounded-xl shadow-md">
                     <p class="text-center text-sm font-semibold text-gray-700">らーめん工房 RISE（塩ラーメン）</p>
                 </div>
 
-                <!-- 6. I AM チーズ (元の4番から移動) -->
+                <!-- 6. I AM チーズ -->
                 <div class="space-y-2 transition duration-300 hover:scale-[1.02] cursor-pointer">
-                    <img src="images/gourmet_5.jpg" alt="I AM チーズのチーズケーキ" class="w-full h-48 object-cover rounded-xl shadow-md">
+                    <img src="images/gourmet_5.jpg" alt="I AM チーズの濃厚なバスクチーズケーキ" class="w-full h-48 object-cover rounded-xl shadow-md">
                     <p class="text-center text-sm font-semibold text-gray-700">I AM チーズ（バスクチーズケーキ）</p>
                 </div>
 
-                <!-- 7. くまとこむぎ (元の5番から移動) -->
+                <!-- 7. くまとこむぎ -->
                 <div class="space-y-2 transition duration-300 hover:scale-[1.02] cursor-pointer">
-                    <img src="images/gourmet_6.jpg" alt="くまとこむぎのクレープ" class="w-full h-48 object-cover rounded-xl shadow-md">
+                    <img src="images/gourmet_6.jpg" alt="散策途中に最適な、くまとこむぎの温かいクレープ" class="w-full h-48 object-cover rounded-xl shadow-md">
                     <p class="text-center text-sm font-semibold text-gray-700">くまとこむぎ（クレープ）</p>
                 </div>
 
@@ -295,9 +336,9 @@
         </section>
 
 
-        <!-- SECTION 3: 地元食材の紹介（特産品） (順序変更 & 画像復活) -->
-        <section id="local-ingredients" class="mb-20">
-            <h2 class="text-3xl md:text-4xl font-extrabold mb-8 text-center text-gray-800">
+        <!-- SECTION 3: 地元食材の紹介（特産品） -->
+        <section id="local-ingredients" class="mb-20" aria-labelledby="ingredients-title">
+            <h2 id="ingredients-title" class="text-3xl md:text-4xl font-extrabold mb-8 text-center text-gray-800">
                 <span class="yao-text-green border-b-4 yao-border-green pb-1">八尾の"畑のつづき"（特産品）</span>
             </h2>
             <div class="md:flex md:space-x-12 items-start">
@@ -309,7 +350,8 @@
                     <h3 class="text-2xl font-bold mb-3 text-red-700 flex items-center">
                         <span class="text-4xl mr-3">🌱</span> 八尾の特産品ピックアップ
                     </h3>
-                    <ul class="space-y-3 bg-white p-6 rounded-xl shadow-lg border-l-4 border-red-500">
+                    <!-- リストにrole="list"を追加してアクセシビリティ向上 -->
+                    <ul class="space-y-3 bg-white p-6 rounded-xl shadow-lg border-l-4 border-red-500" role="list">
                         <li class="font-bold text-gray-800">八尾若ごぼう</li>
                         <p class="text-sm text-gray-600 ml-2">春の味覚。葉から茎、根まで丸ごと食べられるのが特徴で、独特の香りがあります。</p>
                         <li class="font-bold text-gray-800">八尾えだまめ</li>
@@ -320,7 +362,7 @@
                 </div>
                 <!-- 若ごぼうの畑の画像を復活させました -->
                 <div class="md:w-1/2 mt-8 md:mt-0">
-                    <img src="images/wakagobou_field.jpg" alt="八尾若ごぼうの畑" class="rounded-xl shadow-xl w-full h-auto object-cover border-t-8 yao-border-green">
+                    <img src="images/wakagobou_field.jpg" alt="八尾市内で栽培されている八尾若ごぼうの広大な畑" class="rounded-xl shadow-xl w-full h-auto object-cover border-t-8 yao-border-green">
                 </div>
             </div>
         </section>
@@ -343,3 +385,4 @@
 
 </body>
 </html>
+
