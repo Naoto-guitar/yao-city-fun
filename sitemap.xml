@@ -7,6 +7,11 @@
         <priority>1.0</priority>
     </url>
     <url>
+        <loc>https://nfriendship.github.io/yao-city-fun/history_if.html</loc>
+        <lastmod>2025-11-11</lastmod> <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://nfriendship.github.io/yao-city-fun/onji_teramachi.html</loc>
         <lastmod>2025-11-05</lastmod>
         <changefreq>weekly</changefreq>
@@ -26,8 +31,10 @@
     </url>
     <url>
         <loc>https://nfriendship.github.io/yao-city-fun/yao_future_vision.html</loc>
-        <lastmod>2025-11-07</lastmod> <changefreq>weekly</changefreq>
-        <priority>0.8</priority> </url>
+        <lastmod>2025-11-07</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
     <url>
         <loc>https://nfriendship.github.io/yao-city-fun/about.html</loc>
         <lastmod>2025-11-03</lastmod>
